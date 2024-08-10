@@ -160,6 +160,14 @@ section {
   display: flex;
 }
 
+.left-align {
+  text-align: left;
+}
+
+.some-paragraph {
+  color: black;
+}
+
 /* PROFILE SECTION */
 
 #profile {
@@ -169,11 +177,23 @@ section {
   height: 80vh;
 }
 
+.justify-align {
+  text-align: justify;
+}
+
 .section__pic-container {
   display: flex;
   height: 400px;
   width: 400px;
   margin: auto 0;
+}
+
+.border-pic {
+  /*border-radius: 50%; /* Pour rendre l'image ronde */
+  /*border: 5px solid #2980b9; /* Couleur et taille du contour */
+  /*object-fit: cover;*/
+  width: 400px; /* Ajustez selon vos besoins */
+  height: 400px; /* Ajustez selon vos besoins */
 }
 
 .section__text {
@@ -196,6 +216,11 @@ section {
 
 .title {
   font-size: 3rem;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 2rem;
   text-align: center;
 }
 
@@ -304,13 +329,13 @@ section {
 }
 
 .section-container {
-  gap: 4rem;
+  gap: 1rem;
   height: 80%;
 }
 
 .section__pic-container {
-  height: 400px;
-  width: 400px;
+  height: 300px;
+  width: 300px;
   margin: auto 0;
 }
 
@@ -365,9 +390,10 @@ article .icon {
 }
 
 .project-img {
-  border-radius: 2rem;
+  border-radius: 1.5rem;
   width: 90%;
   height: 90%;
+  object-fit: cover;
 }
 
 .project-title {
@@ -429,4 +455,56 @@ footer {
 
 footer p {
   text-align: center;
+}
+
+/* Num */
+
+.list {
+  background-color: white;
+  padding: 1rem 2rem;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.num {
+  padding: 0.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  transition: 0.25s;
+}
+
+.num:nth-child(1):before,
+.num:nth-child(2):before,
+.num:nth-child(3):before,
+.num:nth-child(4):before,
+.num:nth-child(5):before,
+.num:nth-child(6):before {
+  content: attr(data-number);
+  font-size: 4rem;
+  font-weight: bold;
+  color: black;
+  width: 2rem;
+  opacity: 0.05;
+  transition: 0.25s;
+}
+
+.num h3 {
+  position: relative;
+  left: -1.5rem;
+  color: #3d3d3d;
+  font-size: 0.85rem;
+  transition: 0.25s;
+}
+
+.num:hover {
+  background-color: #fafafa;
+  cursor: pointer;
+}
+
+.num:hover:before {
+  opacity: 0.2;
+}
+
+.num:hover h3 {
+  left: 1rem;
 }

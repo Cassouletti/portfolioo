@@ -7,6 +7,11 @@
    <title>My Portfolio</title>
    <link rel="stylesheet" href="style.css" />
    <link rel="stylesheet" href="mediaqueries.css" />
+   <style>
+    body {
+      background-image: url(./assets/flowers.png);
+     }
+   </style>
  </head>
  <body>
    <nav id="desktop-nav">
@@ -38,7 +43,7 @@
    </nav>
    <section id="profile">
      <div class="section__pic-container">
-       <img src="./assets/profile-pic.png" alt="Léa Bensoussan profile picture" />
+       <img src="./assets/moi3.png" alt="Léa Bensoussan profile picture" />
      </div>
      <div class="section__text">
        <p class="section__text__p1">Hello, I'm</p>
@@ -75,13 +80,6 @@
      <p class="section__text__p1">Get To Know More</p>
      <h1 class="title">About Me</h1>
      <div class="section-container">
-       <div class="section__pic-container">
-         <img
-           src="./assets/about-pic.png"
-           alt="Profile picture"
-           class="about-pic"
-         />
-       </div>
        <div class="about-details-container">
          <div class="about-containers">
            <div class="details-container">
@@ -128,7 +126,7 @@
      <div class="experience-details-container">
        <div class="about-containers">
          <div class="details-container">
-           <h2 class="experience-sub-title">Frontend Development</h2>
+           <h2 class="experience-sub-title">Data Analyse</h2>
            <div class="article-container">
              <article>
                <img
@@ -181,8 +179,8 @@
                  class="icon"
                />
                <div>
-                 <h3>TypeScript</h3>
-                 <p>Basic</p>
+                 <h3>Statistiques</h3>
+                 <p>Intermediate</p>
                </div>
              </article>
              <article>
@@ -192,48 +190,15 @@
                  class="icon"
                />
                <div>
-                 <h3>Material UI</h3>
+                 <h3>Dax & Power query</h3>
                  <p>Intermediate</p>
                </div>
              </article>
            </div>
          </div>
          <div class="details-container">
-           <h2 class="experience-sub-title">Frontend Development</h2>
+           <h2 class="experience-sub-title">Data Analyse</h2>
            <div class="article-container">
-             <article>
-               <img
-                 src="./assets/checkmark.png"
-                 alt="Experience icon"
-                 class="icon"
-               />
-               <div>
-                 <h3>PostgreSQL</h3>
-                 <p>Basic</p>
-               </div>
-             </article>
-             <article>
-               <img
-                 src="./assets/checkmark.png"
-                 alt="Experience icon"
-                 class="icon"
-               />
-               <div>
-                 <h3>Node JS</h3>
-                 <p>Intermediate</p>
-               </div>
-             </article>
-             <article>
-               <img
-                 src="./assets/checkmark.png"
-                 alt="Experience icon"
-                 class="icon"
-               />
-               <div>
-                 <h3>Express JS</h3>
-                 <p>Intermediate</p>
-               </div>
-             </article>
              <article>
                <img
                  src="./assets/checkmark.png"
@@ -243,6 +208,39 @@
                <div>
                  <h3>Git</h3>
                  <p>Intermediate</p>
+               </div>
+             </article>
+             <article>
+               <img
+                 src="./assets/checkmark.png"
+                 alt="Experience icon"
+                 class="icon"
+               />
+               <div>
+                 <h3>Visualisation de données</h3>
+                 <p>Intermediate</p>
+               </div>
+             </article>
+             <article>
+               <img
+                 src="./assets/checkmark.png"
+                 alt="Experience icon"
+                 class="icon"
+               />
+               <div>
+                 <h3>Looker</h3>
+                 <p>Intermediate</p>
+               </div>
+             </article>
+             <article>
+               <img
+                 src="./assets/checkmark.png"
+                 alt="Experience icon"
+                 class="icon"
+               />
+               <div>
+                 <h3>Modélisation Prédictive</h3>
+                 <p>Basic</p>
                </div>
              </article>
            </div>
@@ -264,33 +262,35 @@
          <div class="details-container color-container">
            <div class="article-container">
              <img
-               src="./assets/excel.png"
+               src="./assets/excell.png"
                alt="Excel"
-               class="project-img"
+               class="project-img btn-color-2"
+               onclick="location.href='excel.html'"
              />
            </div>
            <h2 class="experience-sub-title project-title">Excel</h2>
            <div class="btn-container">
              <button
                class="btn btn-color-2 project-btn"
-               onclick="location.href='https://github.com/'"
+               onclick="location.href='excel.html'"
              >
-               Github
+               Mes projets
              </button>
              <button
                class="btn btn-color-2 project-btn"
                onclick="location.href='https://github.com/'"
              >
-               Live Demo
+               Github
              </button>
            </div>
          </div>
          <div class="details-container color-container">
            <div class="article-container">
              <img
-               src="./assets/pyython.png"
+               src="./assets/python.png"
                alt="Python"
-               class="project-img"
+               class="project-img btn-color-2"
+               onclick="location.href='python.html'"
              />
            </div>
            <h2 class="experience-sub-title project-title">Python</h2>
@@ -312,9 +312,10 @@
          <div class="details-container color-container">
            <div class="article-container">
              <img
-               src="./assets/powerbi.png"
+               src="./assets/powerrbi.png"
                alt="Project 3"
-               class="project-img"
+               class="project-img btn-color-2"
+               onclick="location.href='python.html'"
              />
            </div>
            <h2 class="experience-sub-title project-title">Power Bi</h2>
