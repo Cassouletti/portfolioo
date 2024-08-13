@@ -28,6 +28,12 @@ a,
 
 /* DESKTOP NAV */
 
+#unique_nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
 nav,
 .nav-links {
   display: flex;
@@ -65,6 +71,7 @@ a:hover {
 .logo:hover {
   cursor: default;
 }
+
 
 /* HAMBURGER MENU */
 
@@ -149,11 +156,19 @@ a:hover {
 /* SECTIONS */
 
 section {
+  position: relative;
   padding-top: 4vh;
   height: 96vh;
   margin: 0 10rem;
   box-sizing: border-box;
   min-height: fit-content;
+}
+.recommendations {
+  padding-top: 4vh;
+  margin: 0 10rem;
+  box-sizing: border-box;
+  min-height: fit-content;
+}
 }
 
 .section-container {
@@ -253,6 +268,14 @@ section {
   width: 8rem;
   border-radius: 2rem;
 }
+.btn1 {
+  font-weight: 600;
+  transition: all 300ms ease;
+  padding: 1rem;
+  width: 15rem;
+  border-radius: 2rem;
+  font-size: 1.4rem;
+}
 
 .btn-color-1,
 .btn-color-2 {
@@ -297,6 +320,10 @@ section {
   margin-bottom: 2rem;
   margin-top: 2rem;
 }
+.about-containers2 {
+  gap: 2rem;
+  margin-top: 2rem;
+}
 
 .about-details-container {
   justify-content: center;
@@ -317,6 +344,11 @@ section {
   right: -5rem;
   bottom: 2.5rem;
 }
+.arrow2 {
+  position: absolute;
+  right: -5rem;
+  bottom: 5rem;
+}
 
 .details-container {
   padding: 1.5rem;
@@ -327,6 +359,7 @@ section {
   border-color: rgb(163, 163, 163);
   text-align: center;
 }
+
 
 .section-container {
   gap: 1rem;
@@ -378,6 +411,28 @@ article .icon {
   cursor: default;
 }
 
+.img_dashboard {
+  display: flex;
+  justify-content: center; /* Centre le conteneur */
+  align-items: center; /* Centre verticalement si nécessaire */
+}
+.img_dashboard3 {
+  display: flex;
+  justify-content: center; /* Centre le conteneur */
+  align-items: center; /* Centre verticalement si nécessaire */
+}
+
+.img_dashboard img {
+  width: 110%; /* L'image est plus large que le conteneur */
+  height: auto; /* Garde les proportions correctes */
+}
+.img_dashboard3 img {
+  width: 50%; /* L'image est plus large que le conteneur */
+  height: auto; /* Garde les proportions correctes */
+
+}
+
+
 /* PROJECTS SECTION */
 
 #projects {
@@ -409,6 +464,13 @@ article .icon {
 /* CONTACT */
 
 #contact {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 70vh;
+}
+
+#git {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -462,49 +524,44 @@ footer p {
 .list {
   background-color: white;
   padding: 1rem 2rem;
-  box-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .num {
   padding: 0.5rem 2rem;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  transition: 0.25s;
+  position: relative; /* Important pour le positionnement de :before */
+  transition: background-color 0.25s, color 0.25s;
+  margin-bottom: 1rem;
 }
 
-.num:nth-child(1):before,
-.num:nth-child(2):before,
-.num:nth-child(3):before,
-.num:nth-child(4):before,
-.num:nth-child(5):before,
-.num:nth-child(6):before {
-  content: attr(data-number);
+.num:before {
+  content: attr(data-number); /* Affiche le numéro */
   font-size: 4rem;
   font-weight: bold;
   color: black;
   width: 2rem;
   opacity: 0.05;
-  transition: 0.25s;
+  position: absolute; /* Positionne le numéro */
+  left: 3rem; /* Ajuste la position du numéro */
+  z-index: -1; /* Assure que le numéro est derrière le texte */
+  transition: opacity 0.25s;
 }
 
 .num h3 {
   position: relative;
-  left: -1.5rem;
+  left: 6rem; /* Ajuste le texte pour qu'il ne chevauche pas le numéro */
   color: #3d3d3d;
   font-size: 0.85rem;
-  transition: 0.25s;
+  transition: color 0.25s, transform 0.25s;
+  margin-left: 3rem;
 }
 
-.num:hover {
-  background-color: #fafafa;
-  cursor: pointer;
+ul.b {
+  list-style-type: square;
 }
 
-.num:hover:before {
-  opacity: 0.2;
-}
-
-.num:hover h3 {
-  left: 1rem;
+.b li {
+  line-height: 2em;
 }
