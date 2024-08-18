@@ -275,11 +275,11 @@
                     <code>
                         months = [rows[<span class="char">'Date'</span>].<span class="functions">month</span> for index, rows in data.<span class="functions">iterrows</span>()]
                         name_months = {<span class="char">'Jan'</span> : 1, <span class="char">'Feb'</span>: 2, <span class="char">'Mar'</span>: 3, <span class="char">'April'</span>: 4, <span class="char">'May'</span>: 5, <span class="char">'June'</span>: 6, 
-                                       <span class="char">'July'</span>: 7, <span class="char">'Aug'</span>: 8, <span class="char">'Sep'</span>: 9, <span class="char">'Oct'</span>: 10, <span class="char">'Nov'</span>: 11, <span class="char">'Dec'</span>: 12}
+                        <span class="char">'July'</span>: 7, <span class="char">'Aug'</span>: 8, <span class="char">'Sep'</span>: 9, <span class="char">'Oct'</span>: 10, <span class="char">'Nov'</span>: 11, <span class="char">'Dec'</span>: 12}
                         <span class="import">def</span> <span class="functions">n_months</span>(value, dictionary):
-                            <span class="import">for</span> x <span class="import">in</span> dictionary:
-                                <span class="import">if</span> value == dictionary[x]:
-                                    <span class="import">return</span> x
+                        <span class="import">for</span> x <span class="import">in</span> dictionary:
+                        <span class="import">if</span> value == dictionary[x]:
+                        <span class="import">return</span> x
                         data[<span class="char">'Month'</span>] = months
                         data[<span class="char">'Month'</span>] = data[<span class="char">'Month'</span>].<span class="functions">apply</span>(<span class="import">lambda</span> x: n_months(x, name_months))
                     </code>
@@ -322,53 +322,123 @@
     <section id="ch">
         <div class="section-container">
             <div class="about-details-container">
-                <div class="img_dashboard5 code-container">
-                    <img src="./assets/dataeducation.png" alt="data_education"  class="image-with-margin" /><br>
-                    <p class="justify-align some-paragraph b">Je constate que la <b>majorité des personnes interrogées</b> se sont arretées au <b>lycée</b>. Pour une analyse plus cohérente, il serait pertinent de <b>regrouper</b> les <i>niveaux 2, 3 et 4 dans une même catégorie</i>.</p>
-                </div><br>
+                <p class="justify-align some-paragraph b">Je constate que la <b>majorité des personnes interrogées</b> se sont arretées au <b>lycée</b>. Pour une analyse plus cohérente, il serait pertinent de <b>regrouper</b> les <i>niveaux 2, 3 et 4 dans une même catégorie</i> : <br>0 - Lycée<br>1 - Education Supérieure.</p>
+                <br>
                 <pre class="code-block">
                     <code>
                         data[<span class="char">'Education'</span>] = data[<span class="char">'Education'</span>].<span class="functions">map</span>({<span class="import">1</span>: <span class="import">0</span>, <span class="import">2</span>: <span class="import">1</span>, <span class="import">3</span>:<span class="import">1</span>, <span class="import">4</span>:<span class="import">1</span>})
                     </code>
                 </pre><br>
+                <div class="details-container">
+                    <p class="justify-align some-paragraph b">Et voilà, <b>le traitement et le nettoyage des données sont terminés</b>. Passons maintenant à l'<b><i>analyse visuelle</i></b>.</p>
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <h2 class="subtitle">Analyse Visuelle</h2>
+                <br>
+                <p class="justify-align some-paragraph">
+                    <div class="num" data-number="1"><h3>Heatmap des Corrélations</h3></div>
+                </p>
+                <div class="img_dashboard4 code-container">
+                    <img src="./assets/heatmap1.png" alt="heatmap1" />
+                </div><br>
+            </div>
+        </div>
+    </section>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <section id="ch">
+        <div class="section-container">
+            <div class="about-details-container">
+                <div class="details-container">
+                    <p class="justify-align some-paragraph b">L'analyse des motifs d'absence révèle quelques <b>corrélations</b> intéressantes :<br><i>Raisons légères</i> (Catégorie 4) : Cette catégorie est associée à un nombre relativement faible d'heures d'absence. Cela est en accord avec l'idée que des <b>motifs moins graves entraînent généralement des absences plus courtes</b>. <i>Maladies</i> (Catégorie 1) et <i>Mortalité Anormale</i> (Catégorie 3) : Ces catégories montrent une <b>corrélation positive avec un nombre élevé d'heures d'absence</b>. Cela est attendu, car les maladies et les situations de mortalité anormale sont souvent des motifs graves nécessitant des absences prolongées.</p>
+                </div>
+                <br><br><br><br><br>
+                <p class="justify-align some-paragraph">
+                    <div class="num" data-number="2"><h3>Motifs d'Absences et Raisons</h3></div>
+                </p>
+                <div class="img_dashboard4 code-container">
+                    <img src="./assets/pie1.png" alt="heatmap1" />
+                </div><br>
             </div>
         </div>
     </section>
 
-
-
-    <section id="recommendations" class = "recommendations">
-        <p class="section__text__p1">Explore my</p>
-        <h1 class="title">Recommendations</h1>
-        <div class="about-containers2">
-            <div class="details-container">
-                <ul class="b justify-align">
-                    <li><b>Promotions en octobre</b> : Organiser des soldes sur l'électroménager en octobre pour profiter du pic de ventes observé durant ce mois.</li><br>
-                    <li><b>Ciblage des segments porteurs </b> : La téléphonie a enregistré une forte croissance des ventes dans la succursale 2, tandis que l'informatique a stagné. Pour capitaliser sur ce succès et la tendance générale, il serait judicieux de lancer des promotions ou des offres spéciales sur la téléphonie et l'informatique à partir de 2029 dans toutes les succursales.</li><br>
-                    <li><b>Adaptation des promotions</b> : Ajuster les promotions en fonction de la localisation de chaque point de vente, des tendances mensuelles et des besoins et envies des consommateurs à ces moments précis pour maximiser l'efficacité des stratégies de vente.</li>
-                </ul><br>
-
+    <section id="ch">
+        <div class="section-container">
+            <div class="about-details-container">
+                <p class="justify-align some-paragraph b">Selon le <i>graphique en secteurs</i>, les raisons d'absentéisme les plus fréquentes sont principalement des <b>raisons légères</b>, suivis des <b>maladies</b>.</p>
+                <br><br><br><br>
+                <p class="justify-align some-paragraph">
+                    <div class="num" data-number="3"><h3>Heures d'Absences et Raisons</h3></div>
+                </p>
+                <div class="img_dashboard4 code-container">
+                    <img src="./assets/pie2.png" alt="heatmap2" />
+                </div><br>
+                <p class="justify-align some-paragraph b">Bien que peu de personnes se soient absentes pour cause de grossesse, le nombre d'heures d'absence associé est <b>significatif</b> et ne doit pas être sous-estimé.</p><br>C'est la raison pour laquelle un data Analyst ne doit pas se baser sur des idées pré-conçues, et bien développer au maximum son analyse.
             </div>
         </div>
-        <br><br>
-        <p class="section__text__p1">Full project on github</p>
-        <div class="contact-info-container">
-            <img
-            src="./assets/github.png"
-            alt="My Github profile"
-            class="icon"
-            onclick="location.href='https://github.com/'"
-            />
-            <p><a href="mailto:bensoussanleaai@gmail.com">Bensoussanleaai@gmail.com</a></p>
+    </section>
+
+    <section id="ch">
+        <div class="section-container">
+            <div class="about-details-container">
+                <p class="justify-align some-paragraph">
+                    <div class="num" data-number="4"><h3>Heures d'Absences par Semaine</h3></div>
+                </p>
+                <div class="img_dashboard4 code-container">
+                    <img src="./assets/barplot1.png" alt="barplot1" />
+                </div><br>
+                <p class="justify-align some-paragraph b">Les <i>jours</i> où les employés s'absentent le plus sont le <b>lundi</b>, le <b>mardi</b> et le <b>mercredi</b>.</p><br><br><br>
+                <p class="justify-align some-paragraph">
+                    <div class="num" data-number="5"><h3>Heures d'Absences par Mois</h3></div>
+                </p>
+                <div class="img_dashboard4 code-container">
+                    <img src="./assets/barplot2.png" alt="barplot2" />
+                </div>
+            </div>
         </div>
-        <div class="btn-container">
-            <button class="btn btn-color-1" onclick="location.href='excel2.html'">
-                Next project
-            </button>
+    </section>
+    <br>
+    <br>
+    <br>
+    <section id="ch">
+        <div class="section-container">
+            <div class="about-details-container">
+                <p class="justify-align some-paragraph b">Les <i>absences sont les plus fréquentes</i> au mois de <b>Mars</b>, suivi de près par le mois de <b>Juillet</b>.</p><br>
+                <div class="details-container">
+                    <p class="justify-align some-paragraph b">Et voilà, <b>l'analyse visuelle</b> arrive à son terme. Nous avons exploré les raisons des absences au travail, en mettant l'accent sur les motifs tels que les raisons légères, les congés liés à la grossesse et les maladies graves. Nous avons également identifié des tendances intéressantes concernant les jours et les mois avec un taux élevé d'absentéisme. Ces insights nous fournissent une compréhension approfondie des facteurs influençant les absences et nous permettent d'élaborer des stratégies pour mieux gérer ce phénomène.</p>
+                </div>
+            </div>
+            <br><br><br>
+            <p class="section__text__p1">Full project on github</p>
+            <div class="contact-info-container">
+                <img
+                src="./assets/github.png"
+                alt="My Github profile"
+                class="icon"
+                onclick="location.href='https://github.com/'"
+                />
+                <p><a href="mailto:bensoussanleaai@gmail.com">Bensoussanleaai@gmail.com</a></p>
+            </div>
+            <div class="btn-container">
+                <button class="btn btn-color-1" onclick="location.href='excel2.html'">
+                    Next project
+                </button>
+            </div>
         </div>
-        <br>
-        <br>
-        <br>
     </section>
 
     <script>

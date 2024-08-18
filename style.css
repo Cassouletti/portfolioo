@@ -486,11 +486,12 @@ article .icon {
   border-color: rgb(166,199,216);
 }
 .img_dashboard5 img {
-  width: 9%; /* L'image est plus large que le conteneur */
+  width: 40%; /* L'image est plus large que le conteneur */
   height: auto; /* Garde les proportions correctes */
   border-radius: 0.8rem;
   border: rgb(53, 53, 53) 0.1rem solid;
   border-color: rgb(166,199,216);
+  background: rgba(255,255,255,0.5);
 }
 .image-with-margin {
     margin-right: 15px; /* Ajuste l'espace sous l'image */
