@@ -7,6 +7,22 @@
   padding: 0;
 }
 
+/* Police Regular (Normale) */
+@font-face {
+    font-family: 'Constantia';
+    src: url('Constantia Font.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Police Bold (Gras) */
+@font-face {
+    font-family: 'Constantia';
+    src: url('CONSTANB.TTF') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
 body {
   font-family: "Poppins", sans-serif;
 }
@@ -272,7 +288,7 @@ section {
   font-weight: 600;
   transition: all 300ms ease;
   padding: 1rem;
-  width: 15rem;
+  width: 20rem;
   border-radius: 2rem;
   font-size: 1.4rem;
 }
@@ -323,6 +339,7 @@ section {
 .about-containers2 {
   gap: 2rem;
   margin-top: 2rem;
+  display: flex;
 }
 
 .about-details-container {
@@ -353,11 +370,19 @@ section {
 .details-container {
   padding: 1.5rem;
   flex: 1;
-  background: white;
+  background: rgba(255,255,255,0.5);
   border-radius: 2rem;
   border: rgb(53, 53, 53) 0.1rem solid;
   border-color: rgb(163, 163, 163);
   text-align: center;
+}
+.details-container2 {
+  padding: 1.5rem;
+  flex: 1;
+  background: rgba(255,255,255,0.5);
+  border-radius: 2rem;
+  border: rgb(53, 53, 53) 0.1rem solid;
+  border-color: rgb(163, 163, 163);
 }
 
 
@@ -416,9 +441,23 @@ article .icon {
   justify-content: center; /* Centre le conteneur */
   align-items: center; /* Centre verticalement si nécessaire */
 }
+.img_dashboard2 {
+  display: flex;
+
+  align-items: center; /* Centre verticalement si nécessaire */
+}
+
 .img_dashboard3 {
   display: flex;
   justify-content: center; /* Centre le conteneur */
+  align-items: center; /* Centre verticalement si nécessaire */
+}
+.img_dashboard4 {
+  display: flex;
+  align-items: center; /* Centre verticalement si nécessaire */
+}
+.img_dashboard5 {
+  display: flex;
   align-items: center; /* Centre verticalement si nécessaire */
 }
 
@@ -426,12 +465,36 @@ article .icon {
   width: 110%; /* L'image est plus large que le conteneur */
   height: auto; /* Garde les proportions correctes */
 }
+.img_dashboard2 img {
+  width: 70%; /* L'image est plus large que le conteneur */
+  height: auto; /* Garde les proportions correctes */
+  border-radius: 0.8rem;
+  border: rgb(53, 53, 53) 0.1rem solid;
+  border-color: rgb(166,199,216);
+}
+
 .img_dashboard3 img {
   width: 50%; /* L'image est plus large que le conteneur */
   height: auto; /* Garde les proportions correctes */
-
 }
 
+.img_dashboard4 img {
+  width: 40%; /* L'image est plus large que le conteneur */
+  height: auto; /* Garde les proportions correctes */
+  border-radius: 0.8rem;
+  border: rgb(53, 53, 53) 0.1rem solid;
+  border-color: rgb(166,199,216);
+}
+.img_dashboard5 img {
+  width: 9%; /* L'image est plus large que le conteneur */
+  height: auto; /* Garde les proportions correctes */
+  border-radius: 0.8rem;
+  border: rgb(53, 53, 53) 0.1rem solid;
+  border-color: rgb(166,199,216);
+}
+.image-with-margin {
+    margin-right: 15px; /* Ajuste l'espace sous l'image */
+}
 
 /* PROJECTS SECTION */
 
@@ -483,7 +546,7 @@ article .icon {
   border-radius: 2rem;
   border: rgb(53, 53, 53) 0.1rem solid;
   border-color: rgb(163, 163, 163);
-  background: (250, 250, 250);
+  background: rbg(250, 250, 250);
   margin: 2rem auto;
   padding: 0.5rem;
 }
@@ -542,7 +605,7 @@ footer p {
   font-weight: bold;
   color: black;
   width: 2rem;
-  opacity: 0.05;
+  opacity: 0.1;
   position: absolute; /* Positionne le numéro */
   left: 3rem; /* Ajuste la position du numéro */
   z-index: -1; /* Assure que le numéro est derrière le texte */
@@ -553,15 +616,136 @@ footer p {
   position: relative;
   left: 6rem; /* Ajuste le texte pour qu'il ne chevauche pas le numéro */
   color: #3d3d3d;
-  font-size: 0.85rem;
+  font-size: 1.05em;
   transition: color 0.25s, transform 0.25s;
   margin-left: 3rem;
+  font-family: Constantia ;
 }
 
 ul.b {
   list-style-type: square;
 }
 
+
 .b li {
   line-height: 2em;
+  font-family: Constantia ;
 }
+.b {
+    line-height: 2em;
+  font-family: Constantia ;
+  list-style-type: square;
+  color: black;
+}
+.c {
+    line-height: 1.1em;
+  font-family: Constantia ;
+  list-style-type: square;
+  color: black;
+}
+ul.c {
+    list-style-type: square;
+}
+p.b {
+    font-size: 1.1rem;
+}
+
+.code-block {
+            background-color: #2d2d2d; /* Background of code block */
+            color: #f8f8f2; /* Default text color */
+            /*padding: 20px;*/
+            font-family: Consolas, "Courier New", monospace;
+            border-radius: 5px;
+            overflow-x: auto;
+            width: 100%;
+            /*margin: 0 auto;*/
+            padding-rigt: 40px; /* Augmente l'espace pour compenser */
+            white-space: pre-wrap;
+        }
+
+.code-block code {
+    margin-left: -15px; /* Décale tout le texte vers la gauche */
+}
+
+  .code-container {
+            padding: 0 5%; /* Adjust padding to control space around the code block */
+        }
+
+.import {
+  color: rgb(178,234,242);
+}
+.functions {
+  color: rgb(200,230,201);
+}
+.char {
+  color: rgb(255,0,68);
+}
+
+
+/* Custom List */
+.custom-list {
+  counter-reset: custom-index;  
+  padding: 0;
+  font-family: Constantia;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Crée deux colonnes de largeur égale */
+  gap: 10px; /* Espace entre les colonnes */
+  font-size: 14px;
+}
+
+/* Custom List element */
+.custom-list li {
+  counter-increment: custom-index; 
+  display: flex;
+  align-items: center;
+  padding: 1px 0;
+  box-sizing: border-box;
+}
+
+/* Custom Element counter */
+.custom-list li::before {
+  content: counters(custom-index, ".", decimal-leading-zero);
+  font-size: 1rem;
+  text-align: right;
+  font-weight: bold;
+  min-width: 50px;
+  padding-right: 12px;
+  font-variant-numeric: tabular-nums;
+  align-self: flex-start;
+  background-image: linear-gradient(to bottom, aquamarine, orangered);
+  background-attachment: fixed;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Custom Element separation */
+.custom-list li + li {
+  border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

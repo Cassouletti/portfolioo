@@ -7,6 +7,12 @@
     <title>Excel Projects</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="mediaqueries.css">
+    <link rel="stylesheet" href="./python/default.min.css">
+    <style>
+        body {
+            background-image: url(./assets/greenclouds.png);
+        }
+    </style>
 </head>
 <body>
     <nav id="desktop-nav">
@@ -36,10 +42,333 @@
             </div>
         </div>
     </nav>
-    <section>
-        <h1>Python Projects</h1>
-        <p>Des détails sur vos projets Excel.</p>
-        <!-- Ajoutez plus de contenu ici -->
+    <h1 class="title">1.</h1>
+    <section id="about">
+        <p class="section__text__p1">Project</p>
+        <h1 class="title">Absentéisme</h1>
+        <div class="section-container">
+            <div class="about-details-container">
+                <div class="about-containers2">
+                    <div class="details-container">
+                        <h3>Introduction</h3>
+                        <p class="justify-align some-paragraph"><br>Dans ce projet, j'ai analysé un jeu de données sur l'<b>absentéisme au travail</b> en utilisant Python, afin de comprendre les facteurs qui influencent l'absentéisme et d'en tirer des <b><i>insights</i></b> pertinents.
+                        </p>
+                    </div>
+                </div>
+                <p class="justify-align some-paragraph b"><br>Avant de procéder l'analyse, un <b><i>prétraitement</i></b> minutieux des données a été effectué.</p>
+                <p class="justify-align some-paragraph b"><br>Une fois les <i>données nettoyées et préparées</i>, j'ai réalisé une <b>analyse préparatoire</b> avec plusieurs <b>visualisations</b> pour explorer les <i>relations entre les variables</i> et identifier les <i>tendances clés</i>.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="ch">
+        <h2 class="subtitle">Nettoyage et Préparation des données</h2>
+        <br>
+        <div class="section-container">
+            <div class="about-details-container">
+                <div>
+                    <p class="justify-align some-paragraph">
+                        <div class="num" data-number="1"><h3>Chargement des modules et données</h3></div>
+                    </p>
+                </div>
+                <div class="code-container">
+                    <pre class="code-block">
+                        <code>
+                            <span class="import">import</span> pandas <span class="import">as</span> pd
+                            <span class="import">import</span> numpy <span class="import">as</span> np
+
+                            <span class="import">import</span> matplotlib.pyplot <span class="import">as</span> plt
+                            <span class="import">import</span> seaborn <span class="import">as</span> sns
+                        </code>
+                    </pre>
+                </div>
+                <p class="justify-align some-paragraph b"><br>Je commence par importer les <i>modules appropriés</i> :<br><b>numpy</b>, utilisé pour la <i>manipulation</i> et le <i>calcul efficace</i> de tableaux et de matrices numériques.<br><b>pandas</b>, qui facilite la manipulation et l'analyse de <i>données structurées</i>.<br><b>matplotlib</b>, qui permet de créer des <i>graphiques</i> et des <i>visualisations</i> de données statiques.<br><b>Seaborn</b>, une <i>bibliothèque complémentaire</i> qui simplifie la création de graphiques.</p>
+
+                <br>
+                <br>
+
+                <br>
+                <br>
+                <p class="justify-align some-paragraph">
+                    <div class="num" data-number="2"><h3>Inspection de la donnée</h3></div>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="ch">
+        <div class="section-container">
+            <div class="about-details-container">
+                <div class="img_dashboard2 code-container">
+                    <img src="./assets/abse.png" alt="data" />
+                </div>
+                <p class="justify-align some-paragraph b"><br>Pour obtenir une <b>vue d'ensemble rapide des données</b>, nous pouvons afficher un <i>résumé concis de chaque colonne</i> :</p>
+                <br>
+                <div class="img_dashboard4 code-container">
+                    <img src="./assets/datainfo.png" alt="datainfo" />
+                </div>
+                <br>
+                <p class="justify-align some-paragraph b"><br>On constate que toutes les colonnes contiennent <b>700 lignes de données</b> <i>(sans aucune donnée manquante)</i> avec des types majoritairement en <i>entiers 64 bits</i> à l'exception d'une colonne en <i>flottants</i> et de la colonne 'Date', qui contient des chaînes de caractères.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="ch">
+        <div class="section-container">
+            <div class="about-details-container">
+                <br><br><br>
+                <p class="justify-align some-paragraph">
+                    <div class="num" data-number="3"><h3>Suppression de la colonne ID</h3></div>
+                </p>
+                <p class="justify-align some-paragraph b"><br>La <b><i>colonne ID</i></b> est utile pour <i>identifier individuellement chaque ligne de données et chaque employé</i>, mais n'apporte <b>aucune valeur analytique</b>. En effet, elle ne contient pas d'informations quantitatives ou qualitatives pertinentes pour l'<i>analyse des facteurs d'absentéisme</i>.<br><b>Retirer la colonne ID</b> permet donc de <i>se concentrer sur les variables significatives</i>, en évitant que cet identifiant n'influence aucun résultat.</p>
+                <div class="code-container"><br>
+                    <pre class="code-block">
+                        <code>
+                            data = data.<span class="functions">drop</span>(<span class="char">"ID"</span>, axis = <span class="import">1</span>)
+                        </code>
+                    </pre>
+                </div>
+                <br><br><br><br><br>
+                <p class="justify-align some-paragraph">
+                    <div class="num" data-number="4"><h3>Absentéisme en heures</h3></div>
+                </p>
+                <div class="code-container">
+                    <pre class="code-block">
+                        <code>
+                            data[<span class="char">'Absenteeism Time in Hours'</span>].<span class="functions">min</span>()
+                            data[<span class="char">'Absenteeism Time in Hours'</span>].<span class="functions">max</span>()
+                            data[<span class="char">'Absenteeism Time in Hours'</span>].<span class="functions">median</span>()
+                            <span class="import">round</span>(data[<span class="char">'Absenteeism Time in Hours'</span>].<span class="functions">mean</span>(), <span class="import">2</span>)
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+    <br>
+
+    <section id="ch">
+        <div class="section-container">
+            <div class="about-details-container">
+                <p class="justify-align some-paragraph b">Les résultats de l'analyse descriptive des heures d'absentéisme montrent :</p><br>
+                <ul class="c justify-align code-container">
+                    <li><b>Minimum</b> : 0 heure</li><br>
+                    <li><b>Maximum</b> : 120 heures</li><br>
+                    <li><b>Médiane</b> : 3 heures</li><br>
+                    <li><b>Moyenne</b> : 6,76 heures</li>
+                </ul>
+                <br><br><br><br><br>
+                <p class="justify-align some-paragraph">
+                    <div class="num" data-number="5"><h3>Motif d'absence</h3></div>
+                </p>
+                <p class="justify-align some-paragraph b">Cette colonne contient des informations sur les raisons déclarées par les salariés pour <b>expliquer leur absence</b>. <br>Examinons cette colonne de plus près.</p><br>
+                <div class="code-container">
+                    <pre class="code-block">
+                        <code>
+                            data[<span class="char">'Reason for Absence'</span>].<span class="functions">unique</span>()
+                            sorted_reasons = <span class="import">sorted</span>(data['<span class="char">Reason for Absence'</span>].<span class="functions">unique</span>())
+                            <span class="import">print(<span class="char">', '</span>.<span class="functions">join</span>(<span class="import">map</span>(<span class="import">str</span>, sorted_reasons)))
+                        </code>
+                    </pre>
+                </div>
+                <br>
+                <p class="justify-align some-paragraph b">Le dataset contient <b>28 raisons d'absence</b> au travail, numérotées de 0 à 28, <b>à l'exception de la raison 20</b> qui est a<i>bsente</i>.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="ch">
+        <div class="section-container">
+            <div class="about-details-container">
+                <p class="justify-align some-paragraph b"><b>Mais quelles sont ces raisons d'absence ? Que sont ces numéros ?</b></p><br>
+                <div class="details-container2">
+                    <ul class="custom-list">
+                      <li><i>Certaines maladies infectieuses et parasitaires</i></li>
+                      <li><i>Les néoplasmes</i></li>
+                      <li><i>Maladies du sang et des organes hématopoïétiques et certains troubles du système immunitaire</i></li>
+                      <li><i>Maladies endocriniennes, nutritionnelles et métaboliques</i></li>
+                      <li><i>Troubles mentaux et du comportement</i></li>
+                      <li><i>Maladies du système nerveux</i></li>
+                      <li><i>Maladies de l'œil et de l'odnexa</i></li>
+                      <li><i>Maladies de l'oreille et de l'apophyse mastoïde</i></li>
+                      <li><i>Maladies de l'appareil circulatoire</i></li>
+                      <li><i>Maladies de l'appareil respiratoire</i></li>
+                      <li><i>Maladies de l'appareil digestif</i></li>
+                      <li><i>Maladies de la peau et du tissu sous-cutané</i></li>
+                      <li><i>Maladies de l'appareil locomoteur et du tissu conjonctif</i></li>
+                      <li><i>Maladies de l'appareil génito-urinaire</i></li>
+                      <li><i>Grossesse, accouchement et puerpéralité</i></li>
+                      <li><i>Certaines affections ayant leur origine dans la période périnatale</i></li>
+                      <li><i>Malformations congénitales, déformations et anomalies chromosomiques</i></li>
+                      <li><i>Symptômes, signes et résultats anormaux d'examens cliniques et de laboratoire, non classés ailleurs</i></li>
+                      <li><i>Blessures, empoisonnements et certaines autres conséquences d'origine externe</i></li>
+                      <li><i>Causes externes de morbidité et de mortalité</i></li>
+                      <li><i>Facteurs influençant l'état de santé et les contacts avec les services de santé</i></li>
+                      <li><i>Suivi des patients</i></li>
+                      <li><i>Consultation médicale</i></li>
+                      <li><i>Don de sang</i></li>
+                      <li><i>Examen de laboratoire</i></li>
+                      <li><i>Absence injustifiée</i></li>
+                      <li><i>Kinésithérapie</i></li>
+                      <li><i>Consultation dentaire</i></li>
+                  </ul></div>
+                  <br>
+                  <p class="justify-align some-paragraph b">Ces nombres représentent des <b>catégories</b> correspondant à <i>différents motifs d'absence</i>. Ils sont utilisés pour <i>simplifier et alléger le jeu de données</i>. Pour une analyse plus précise, il est préférable de les convertir en <b>variables muettes</b>. En régression, une variable muette est une variable qui prend une valeur binaire (0 ou 1) pour indiquer l'absence ou la présence d'un effet catégorique susceptible de modifier le résultat.</p>
+              </div>
+          </div>
+      </section>
+      <br><br><br><br>
+
+      <section id="ch">
+        <div class="section-container">
+            <div class="about-details-container">
+                <div class="code-container">
+                    <pre class="code-block">
+                        <code>
+                            reason_columns = pd.<span class="functions">get_dummies</span>(data[<span class="char">'Reason for Absence'</span>], drop_first= <span class="import">True</span>).<span class="functions">astype</span>(<span class="import">int</span>)
+                        </code>
+                    </pre>
+                </div><br>
+                <p class="justify-align some-paragraph b"><b>On lâche également la colonne 0</b>, car elle ne represente rien.<br>Si on ajoute toutes les colonnes de reason_colomns, le dataframe sera illisible. C'est la raison pour laquelle je vais scender ces colonnes en <b>différents groupes</b> pour avoir une <i>vision globale des raisons d'absentéisme</i>.</p><br>
+                <ul class="c justify-align code-container">
+                    <li><b>Groupe 1 - 1-14</b> : Maladies</li><br>
+                    <li><b>Groupe 2 - 15-17</b> : Grossesse</li><br>
+                    <li><b>Groupe 3 - 18-21</b> : Mortalité anormale</li><br>
+                    <li><b>Groupe 4 - 22-28</b> : Raisons légères</li>
+                </ul>
+                <br>
+                <pre class="code-block">
+                    <code>
+                        data[<span class="char">'Reason 1'</span>] = reason_columns.<span class="functions">loc</span>[:,:<span class="import">14</span>].<span class="functions">max</span>(axis = <span class="import">1</span>)
+                        data[<span class="char">'Reason 2'</span>] = reason_columns.<span class="functions">loc</span>[:,<span class="import">15</span>:<span class="import">17</span>].<span class="functions">max</span>(axis = <span class="import">1</span>)
+                        data[<span class="char">'Reason 3'</span>] = reason_columns.<span class="functions">loc</span>[:,<span class="import">18</span>:<span class="import">21</span>].<span class="functions">max</span>(axis = <span class="import">1</span>)
+                        data[<span class="char">'Reason 4'</span>] = reason_columns.<span class="functions">loc</span>[:,<span class="import">22</span>:].<span class="functions">max</span>(axis = <span class="import">1</span>)
+                    </code>
+                </pre><br>
+                <pre class="code-block">
+                    <code>
+                        data = data.<span class="functions">drop</span>(<span class="char">"Reason for Absence"</span>, axis = <span class="import">1</span>)
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+
+    <section id="ch">
+        <div class="section-container">
+            <div class="about-details-container">
+                <div class="img_dashboard2 code-container">
+                    <img src="./assets/data_rea.png" alt="data_reasons" />
+                </div><br>
+                <p class="justify-align some-paragraph b">Après transformation, <b>chaque motif d'absence</b> est désormais représenté par une <b>variable binaire distincte</b>, ce qui permet une <i>analyse plus précise</i> et une <i>meilleure compréhension</i> de l'impact de chaque catégorie sur l'absentéisme.</p><br><br><br><br>
+                <p class="justify-align some-paragraph">
+                    <div class="num" data-number="6"><h3>La colonne Date</h3></div>
+                </p>
+                <p class="justify-align some-paragraph b">Les dates dans la colonne sont actuellement des <b>chaînes de caractères</b>. <i>Convertissons-les en format</i> <b>datetime</b>.</p><br>
+                <pre class="code-block">
+                    <code>
+                        data[<span class="char">'Date'</span>] = pd.<span class="functions">to_datetime</span>(data[<span class="char">'Date'</span>], <span class="import">format</span>=<span class="char">"%d/%m/%Y"</span>)
+                    </code>
+                </pre><br>
+                <p class="justify-align some-paragraph b">Je crée une colonne "mois" en vue d'une analyse avec des visualisations.</p><br>
+                <pre class="code-block">
+                    <code>
+                        months = [rows[<span class="char">'Date'</span>].<span class="functions">month</span> for index, rows in data.<span class="functions">iterrows</span>()]
+                        name_months = {<span class="char">'Jan'</span> : 1, <span class="char">'Feb'</span>: 2, <span class="char">'Mar'</span>: 3, <span class="char">'April'</span>: 4, <span class="char">'May'</span>: 5, <span class="char">'June'</span>: 6, 
+                                       <span class="char">'July'</span>: 7, <span class="char">'Aug'</span>: 8, <span class="char">'Sep'</span>: 9, <span class="char">'Oct'</span>: 10, <span class="char">'Nov'</span>: 11, <span class="char">'Dec'</span>: 12}
+                        <span class="import">def</span> <span class="functions">n_months</span>(value, dictionary):
+                            <span class="import">for</span> x <span class="import">in</span> dictionary:
+                                <span class="import">if</span> value == dictionary[x]:
+                                    <span class="import">return</span> x
+                        data[<span class="char">'Month'</span>] = months
+                        data[<span class="char">'Month'</span>] = data[<span class="char">'Month'</span>].<span class="functions">apply</span>(<span class="import">lambda</span> x: n_months(x, name_months))
+                    </code>
+                </pre><br>
+            </div>
+        </div>
+    </section>
+
+    <br><br><br><br><br><br><br><br><br>
+
+    <section id="ch">
+        <div class="section-container">
+            <div class="about-details-container">
+                <p class="justify-align some-paragraph b">En utilisant la bibliothèque <b><i>Babel</i></b>, je traduis les noms des mois dans la colonne "mois" en <b>français</b>, afin de rendre les analyses et visualisations plus pertinentes pour un public francophone.</p><br><br><br><br>
+                <p class="justify-align some-paragraph">
+                    <div class="num" data-number="7"><h3>La colonne Education</h3></div>
+                </p>
+                <pre class="code-block">
+                    <code>
+                        data[<span class="char">'Education'</span>].<span class="functions">unique</span>()
+                    </code>
+                </pre><br>
+                <p class="justify-align some-paragraph b">On obtient <i>1, 2, 3, 4</i>. <b>Mais que représente ces catégories Education ?</b></p><br>
+                <ul class="c justify-align code-container">
+                    <li><b>Niveau 1</b> : Lycée</li><br>
+                    <li><b>Niveau 2</b> : Diplôme</li><br>
+                    <li><b>Niveau 3</b> : Licence</li><br>
+                    <li><b>Niveau 4</b> : Master/ Doctorat</li>
+                </ul>
+                <p class="justify-align some-paragraph b"><b>Comment les différents niveaux d'éducation sont-ils représentés dans notre donnée ?</b></p><br>
+                <pre class="code-block">
+                    <code>
+                        data[<span class="char">'Education'</span>].<span class="functions">value_counts</span>()
+                    </code>
+                </pre><br>
+            </div>
+        </div>
+    </section>
+
+    <section id="ch">
+        <div class="section-container">
+            <div class="about-details-container">
+                <div class="img_dashboard5 code-container">
+                    <img src="./assets/dataeducation.png" alt="data_education"  class="image-with-margin" /><br>
+                    <p class="justify-align some-paragraph b">Je constate que la <b>majorité des personnes interrogées</b> se sont arretées au <b>lycée</b>. Pour une analyse plus cohérente, il serait pertinent de <b>regrouper</b> les <i>niveaux 2, 3 et 4 dans une même catégorie</i>.</p>
+                </div><br>
+                <pre class="code-block">
+                    <code>
+                        data[<span class="char">'Education'</span>] = data[<span class="char">'Education'</span>].<span class="functions">map</span>({<span class="import">1</span>: <span class="import">0</span>, <span class="import">2</span>: <span class="import">1</span>, <span class="import">3</span>:<span class="import">1</span>, <span class="import">4</span>:<span class="import">1</span>})
+                    </code>
+                </pre><br>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="recommendations" class = "recommendations">
+        <p class="section__text__p1">Explore my</p>
+        <h1 class="title">Recommendations</h1>
+        <div class="about-containers2">
+            <div class="details-container">
+                <ul class="b justify-align">
+                    <li><b>Promotions en octobre</b> : Organiser des soldes sur l'électroménager en octobre pour profiter du pic de ventes observé durant ce mois.</li><br>
+                    <li><b>Ciblage des segments porteurs </b> : La téléphonie a enregistré une forte croissance des ventes dans la succursale 2, tandis que l'informatique a stagné. Pour capitaliser sur ce succès et la tendance générale, il serait judicieux de lancer des promotions ou des offres spéciales sur la téléphonie et l'informatique à partir de 2029 dans toutes les succursales.</li><br>
+                    <li><b>Adaptation des promotions</b> : Ajuster les promotions en fonction de la localisation de chaque point de vente, des tendances mensuelles et des besoins et envies des consommateurs à ces moments précis pour maximiser l'efficacité des stratégies de vente.</li>
+                </ul><br>
+
+            </div>
+        </div>
+        <br><br>
+        <p class="section__text__p1">Full project on github</p>
+        <div class="contact-info-container">
+            <img
+            src="./assets/github.png"
+            alt="My Github profile"
+            class="icon"
+            onclick="location.href='https://github.com/'"
+            />
+            <p><a href="mailto:bensoussanleaai@gmail.com">Bensoussanleaai@gmail.com</a></p>
+        </div>
+        <div class="btn-container">
+            <button class="btn btn-color-1" onclick="location.href='excel2.html'">
+                Next project
+            </button>
+        </div>
+        <br>
+        <br>
+        <br>
     </section>
 
     <script>
