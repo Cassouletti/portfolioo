@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel Projects</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaqueries.css">
+    <link rel="stylesheet" href="./python/default.min.css">
+    <style>
+        body {
+            background-image: url(./assets/cloudsnine.png);
+        }
+    </style>
+</head>
+<body>
+    <nav id="desktop-nav">
+        <div class="logo">Léa Bensoussan</div>
+        <div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="research.html">Cosmetic</a></li>
+                <li><a href="excel.html">Excel</a></li>
+                <li><a href="python.html">Python</a></li>
+                <li><a href="powerbi.html">Power Bi</a></li>
+            </ul>
+        </div>
+    </nav>
+    <nav id="hamburger-nav">
+        <div class="logo">Léa Bensoussan</div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <li><a href="index.html" onclick="toggleMenu()">Home</a></li>
+                <li><a href="research.html" onclick="toggleMenu()">Cosmetic</a></li>
+                <li><a href="excel.html" onclick="toggleMenu()">Excel</a></li>
+                <li><a href="python.html" onclick="toggleMenu()">Python</a></li>
+                <li><a href="powerbi.html" onclick="toggleMenu()">Power Bi</a></li>
+            </div>
+        </div>
+    </nav>
+    <section id="about">
+        <p class="section__text__p1">Cosmetics and Chemical Substances</p>
+        <h1 class="title">Market Analysis Deep Dive</h1>
+        <div class="section-container">
+            <div class="about-details-container">
+                <br><br><br>
+                <div>
+                    <p class="justify-align some-paragraph">
+                        <div class="num" data-number="1"><h3>Nettoyage et Catégorisation des données</h3></div>
+                    </p>
+                </div>
+                <p class="justify-align some-paragraph b"><br>J’ai effectué un <b>nettoyage approfondi des données</b> principalement à l’aide d’<b>Excel</b> et de <b>Power BI</b>. Ce processus a consisté en plusieurs étapes cruciales. Tout d’abord, j’ai supprimé les <i>doublons</i> pour garantir l'intégrité des informations. <br>Ensuite, j’ai procédé à la <i>suppression des colonnes</i> superflues après une analyse approfondie de leur contenu, nécessitant souvent une recherche afin de comprendre leur pertinence. Certaines tables de données mal délimitées ont été <i>réarrangées</i> pour assurer une meilleure lisibilité et un traitement plus efficace. J’ai également harmonisé le type de données, assurant une cohérence entre les différents datasets.</p>
+                <p class="justify-align some-paragraph b"><br>Par ailleurs, l'une des tâches a été d'apporter une cohérence globale à l'ensemble des datasets, notamment en veillant à ce que les identifiants comme les <i>numéros CAS soient corrects et uniformisés</i>. Parfois, certaines enregistrements comportaient plusieurs CAS sur une même ligne. Pour garantir la cohérence des analyses, j'ai dû dupliquer ces lignes, en attribuant à chaque CAS une ligne distincte, ce qui a permis de traiter chaque substance individuellement sans compromettre l'intégrité des données.</p><br>
+                <div class="img_dashboard10 code-container">
+                    <img src="./assets/casd.png" alt="casd" />
+                </div>
+            </div>
+        </div>
+    </section>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <section id="ch">
+        <div class="section-container">
+            <div class="about-details-container">
+                <p class="justify-align some-paragraph b">Cela m'a permis d'établir des <b>relations complexes entre les différentes tables</b>, en gérant notamment les <i>cardinalités multiples</i> afin de garantir une représentation correcte des liens entre les données. Grâce à cette rigueur dans le nettoyage et l'organisation, j'ai pu construire une base solide pour les analyses ultérieures, tout en optimisant la structure des données pour permettre une exploration plus fluide et pertinente.</p><br>
+                <div class="code-container">
+                    <pre class="code-block">
+                        <code>
+                            <span class="loop">for</span> index, row <span class="loop">in</span> agritox.<span class="functions">iterrows</span>():
+                            <span class="condition">if</span> <span class="char">" ou "</span> <span class="condition">in</span> row[<span class="char">"CAS"</span>]:
+                            # Séparer le contenu de la colonne "CAS" en deux parties
+                            cas = row[<span class="char">"CAS"</span>].<span class="functions">split</span>(<span class="char">' ou '</span>)
+
+                            # Mettre à jour la première partie dans la ligne actuelle
+                            agritox.<span class="functions">at</span>[index, <span class="char">"CAS"</span>] = cas[<span class="import">0</span>]
+
+                            # Créer une nouvelle ligne avec la deuxième partie du CAS
+                            new_row = row.<span class="functions">copy</span>()  # Crée une copie de la ligne actuelle
+                            new_row[<span class="char">"CAS"</span>] = cas[<span class="import">1</span>]  # Remplacer "CAS" par la deuxième partie
+
+                            # Ajouter cette nouvelle ligne à la liste new_rows
+                            new_rows.<span class="functions">append</span>(new_row)
+
+                            # Si des nouvelles lignes ont été collectées, les ajouter au DataFrame
+                            <span class="condition">if</span> new_rows:
+                            # Créer un DataFrame à partir des nouvelles lignes et les concaténer
+                            agritox = pd.<span class="functions">concat</span>([agritox, pd.<span class="functions">DataFrame</span>(new_rows)], <span class="char">ignore_index</span>=<span class="import">True</span>)
+                        </code>
+                    </pre>
+                </div><br><br>
+                <p class="justify-align some-paragraph b">Par la suite, j'ai entrepris un <b>nettoyage approfondi des données</b> à l'aide de Python, en me concentrant spécifiquement sur les substances préoccupantes issues des bases <b><i>ARGRITOX, SVHC et la Reportable Ingredients List</i></b>. <br>L'objectif principal était d'harmoniser ces différentes bases de données afin de les fusionner de manière cohérente. Pour ce faire, j'ai réalisé une analyse des valeurs uniques dans chaque dataset, ce qui m'a permis de créer des catégories précises pour chaque substance, telles que "cancérogène", "perturbateur endocrinien", etc. Voici une <i>liste non exhaustive</i> :</p>
+            </div>
+        </div>
+    </section>
+    <br>
+    <br><br>
+    <br><br>
+    <section id="ch">
+        <div class="section-container">
+            <div class="about-details-container">
+                <div class="details-container2">
+                    <ul class="custom-list">
+                      <li><i>Matières solides inflammables</i></li>
+                      <li><i>Irritation oculaire</i></li>
+                      <li><i>Mortel par aspiration</i></li>
+                      <li><i>Dangers pour le milieu aquatique</i></li>
+                      <li><i>PBT</i></li>
+                      <li><i>Toxicité aiguë (par voie cutanée)</i></li>
+                      <li><i>Toxicité spécifique pour certains organes cibles</i></li>
+                      <li><i>Cancérogénicité</i></li>
+                      <li><i>Serious effects to human health</i></li>
+                      <li><i>vPvB</i></li>
+                      <li><i>Corrosif pour la peau</i></li>
+                      <li><i>Toxicité pour la reproduction</i></li>
+                      <li><i>Mutagenic</i></li>
+                      <li><i>Toxicité spécifique pour certains organes cibles</i></li>
+                  </ul></div><br>
+                  <p class="justify-align some-paragraph b">Cette étape a permis de dresser une liste exhaustive des risques potentiels associés aux substances chimiques:</p><br>
+                  <ul class="c justify-align code-container">
+                    <li><b>Risques Génétiques et Cancers</b> : Cancers et Mutations génétiques</li><br>
+                    <li><b>Risques Toxiques Cutanés et Respiratoires</b> : Concernent les substances pouvant affecter la peau, provoquer des allergies ou des problèmes respiratoires.</li><br>
+                    <li><b>Perturbateurs Endocriniens / Toxiques pour la Reproduction</b> : Il s'agit ici des substances qui interfèrent avec le système hormonal, ce qui peut causer des problèmes de reproduction et de développement.</li><br>
+                    <li><b>Risques Systémiques et Organiques</b> : Cette catégorie couvre les effets nocifs sur plusieurs organes et systèmes vitaux.</li><br>
+                    <li><b>Danger pour l’Environnement et les Organismes vivants</b> : Elle englobe les substances qui sont persistantes dans l’environnement et qui s'accumulent dans les organismes, causant des dommages à l'écosystème.</li><br>
+                </ul><br>
+                <p class="justify-align some-paragraph b">Pour chaque dataset de <i>substances préoccupantes</i>, j'ai mis en place des <b>variables indicatrices</b> (ou dummies) qui attribuaient une valeur de "1" lorsqu'une substance présentait un risque identifié (comme le cancer, la toxicité, etc.), et une valeur de "0" lorsqu'aucun risque n'était signalé. <br>Ces variables m'ont permis de <b>fusionner les trois datasets</b> en appliquant une règle stricte : si une substance (identifiée par son numéro CAS) était considérée à risque dans une base de données, ce risque était systématiquement conservé, même si une autre base ne le mentionnait pas. Autrement dit, un "1" l'emportait toujours sur un "0", garantissant que les risques potentiels n’étaient ni minimisés ni ignorés.</p><br>
+            </div>
+        </div>
+    </section>
+    <br><br><br><br>
+    <section id="ch">
+        <div class="section-container">
+            <div class="about-details-container">
+                <br><br>
+                <div class="img_dashboard10 code-container">
+                    <img src="./assets/cadd.png" alt="casdd" />
+                </div>
+                <p class="justify-align some-paragraph b"><br>Ce processus m'a permis de consolider les informations issues de différentes sources, en particulier gouvernementales, même lorsque les évaluations variaient d'une base à l'autre. Ainsi, j'ai pu normaliser les données tout en adoptant une approche prudente, afin de ne pas écarter de risques potentiels. <b>Le résultat final a été la création d'une table fusionnée (MERGE)</b>, intégrant ces datasets pour une analyse plus globale et cohérente.</p>
+                <div class="img_dashboard10 code-container">
+                    <img src="./assets/pano11.png" alt="pano11" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ch">
+        <div class="section-container">
+            <div class="about-details-container">
+                <br>
+                <p class="justify-align some-paragraph">
+                    <div class="num" data-number="2"><h3>Inventaire TSCA</h3></div>
+                </p>
+                <p class="justify-align some-paragraph b">En examinant l'inventaire TSCA, on recense environ <b>70 000 substances chimiques non confidentielles</b>. Nous avions mentionné un total de plus de 85 000 substances inscrites dans cet inventaire, ce qui indique que près de 15 000 d'entre elles sont classées comme confidentielles. <br>Cette classification, souvent motivée par des raisons de protection des <b>secrets commerciaux</b>, vise à préserver l'identité chimique de ces substances ou à maintenir la compétitivité des entreprises. Toutefois, même lorsque la confidentialité est invoquée, les autorités réglementaires, notamment l'Agence de Protection de l’Environnement (EPA), ont toujours accès à ces informations afin d'évaluer les risques potentiels pour la santé humaine et l’environnement.</p><br>
+                <div class="img_dashboard11 code-container">
+                    <img src="./assets/tsca1.png" alt="tsca1" />
+                </div><br>
+                <p class="justify-align some-paragraph b">Actuellement, environ <b>30 000 substances sont considérées comme actives sur le marché américain</b>, ce qui signifie qu’elles sont encore <i>produites, importées ou utilisées</i> dans des produits. Ce chiffre représente près de la <b>moitié de l'inventaire total</b>, ce qui est considérable. On pourrait supposer que certaines substances inactives ont été retirées du marché en raison de leur dangerosité, ou simplement parce qu'elles ne sont plus utilisées ou fabriquées. Cela suggère qu’une grande proportion des substances initialement répertoriées depuis la création de l'inventaire en 1985 ont été écartées du marché.</p>
+            </div><br>
+        </div>
+    </section>
+    <br><br><br><br>
+    <section id="ch">
+        <div class="section-container">
+            <div class="about-details-container">
+                <p class="justify-align some-paragraph b">Parmi les substances actives, environ <b>7 000 sont classées comme substances UVCB</b>, un acronyme désignant les « <i>Substances de composition inconnue ou variable</i> ». En d'autres termes, il s'agit de substances dont la composition est trop complexe pour être définie précisément, ce qui rend plus difficile l'évaluation de leur toxicité et de leurs risques. Toutefois, il serait imprudent de conclure que ces substances sont automatiquement dangereuses.</p><br>
+                <div class="img_dashboard11 code-container">
+                    <img src="./assets/uvcb.png" alt="uvcb" />
+                </div><br>
+                <p class="justify-align some-paragraph b">Si l'on examine la répartition des <b>UVCB entre substances actives et inactives</b>, aucune différence notable n’apparaît. Ainsi, si certaines substances inactives ont effectivement été retirées pour des raisons de dangerosité, cela ne semble pas être le cas des UVCB. Leur complexité réside davantage dans leur nature que dans un potentiel de danger intrinsèque.<br><br><br>Grâce à la table fusionnée (MERGE), je suis en mesure de <b>quantifier combien de substances appartiennent à chaque catégorie de risques</b>.</p>
+                <div class="img_dashboard11 code-container">
+                    <img src="./assets/tscarisques.png" alt="tscarisques" />
+                </div><br>
+            </div>
+        </div>
+    </section>
+    <br><br><br><br><br><br><br><br><br><br>
+    <section id="ch">
+        <div class="section-container">
+            <div class="about-details-container">
+                <p class="justify-align some-paragraph b">Par exemple, on constate ici qu’il y a <b>821 substances actives</b> associées à des risques génétiques et au cancer. Ce chiffre peut sembler élevé, mais il représente <b>2,5 % de l’ensemble des substances actives</b>. Cela dit, il ne faut pas pour autant sous-estimer ce chiffre : <i>un risque reste un risque</i>. <br><br>Il est également possible qu’une même substance soit liée à plusieurs types de dangers. Ainsi, j’ai identifié 94 substances qui sont à la fois associées à des risques cancérigènes et à des menaces pour l’environnement. Ce qui est particulièrement préoccupant, c’est que, selon les informations disponibles (sans tenir compte des substances confidentielles ni de celles encore en cours d’évaluation), <b>1 482 substances dangereuses sont encore actives</b> sur le <i>marché américain</i> et potentiellement présentes dans les produits que nous utilisons. Cela représente environ <b>4,5 % de l’ensemble des substances actives</b>.<br> Malheureusement, je n’ai pas accès aux inventaires historiques, notamment celui de 1985, ce qui m’empêche de déterminer si ce chiffre est en augmentation ou en diminution. Par ailleurs, il est important de noter que ces substances ne concernent pas uniquement les produits cosmétiques, mais s’étendent à un large éventail de secteurs industriels.</p><br>
+                <br><br>
+                <p class="justify-align some-paragraph">
+                    <div class="num" data-number="3"><h3>REACH (Union Européenne)</h3></div>
+                </p>
+                <p class="justify-align some-paragraph b">Après avoir examiné la situation sur le marché américain, intéressons-nous au marché européen, et à la base de donnée REACH.</p>
+                <div class="img_dashboard11 code-container">
+                    <img src="./assets/reach1.png" alt="reach1" />
+                </div><br>
+            </div>
+        </div>
+    </section>
+    <br><br><br><br><br><br><br><br>
+    <section id="ch">
+        <div class="section-container">
+            <div class="about-details-container">
+                <p class="justify-align some-paragraph b">Dans la base de données REACH, on recense près de <b>23 000 substances chimiques</b>, ce qui représente environ <b>un tiers</b> de l'inventaire du TSCA américain. Si l'on compare les numéros EC et CAS, on observe une différence notable : près de 20 000 numéros EC pour environ 15 000 numéros CAS. En revanche, dans l'inventaire TSCA, seuls 11 % des substances actives américaines ont un équivalent EC. </p><br>
+                <div class="img_dashboard11 code-container">
+                    <img src="./assets/reachtsca.png" alt="reachtsca" />
+                </div><br>
+                <p class="justify-align some-paragraph b">Cela pourrait <i>suggérer que les produits cosmétiques autorisés en Union européenne présentent moins de risques</i>, une hypothèse que nous allons explorer.<br><br>Avant d'examiner les risques liés aux substances, considérons le nombre de substances actives.</p><br>
+                <div class="img_dashboard11 code-container">
+                    <img src="./assets/reachactive.png" alt="reachactive" />
+                </div><br>
+            </div>
+        </div>
+    </section>
+
+    <br><br><br>
+
+    <section id="ch">
+        <div class="section-container">
+            <div class="about-details-container">
+                <p class="justify-align some-paragraph b">Près de <b>20 000 substances sont encore actives</b> sur les 23 000 répertoriées dans la base REACH, soit une réduction d’environ <b>13 %</b> depuis la création de REACH en 2007. En comparaison, plus de la moitié des substances de l'inventaire TSCA ont été retirées du marché américain. Cette différence pourrait être due à la rigueur des régulations européennes ou au fait que l'inventaire américain date de 1985. Il est cependant difficile de tirer des conclusions précises.<br><br>Une autre information intéressante que nous fournit REACH concerne le <b>type d'enregistrement des substances</b>, qui définit le niveau d’exigence pour la soumission d'une substance chimique. </p><br>
+                <div class="img_dashboard11 code-container">
+                    <img src="./assets/full.png" alt="full" />
+                </div><br>
+                <p class="justify-align some-paragraph b">Dans ce graphique, on peut observer le <b>nombre de substances classées par statut et type d'enregistrement</b>. Pour les substances actives, les deux types d'enregistrement principaux sont <i>FULL</i> et <i>INTERMEDIATE</i>. <br>Le type FULL indique qu'une substance a été entièrement enregistrée avec une évaluation complète de ses risques, offrant ainsi une assurance quant à sa sécurité. Le type INTERMEDIATE, en revanche, concerne les substances utilisées pour transformer d'autres substances, sous des conditions contrôlées. Ces deux types d'enregistrement sont donc jugés relativement sûrs selon les critères de l’Union européenne. <br><br>Mais qu'en est-il des substances classées sous le type <b>NEONS</b> ? </p><br>
+            </div>
+        </div>
+    </section>
+    <br><br><br><br><br><br>
+    <section id="ch">
+        <div class="section-container">
+            <div class="about-details-container">
+                <p class="justify-align some-paragraph b">Dans la base REACH, une colonne indique les quantités minimales et maximales de substances importées ou produites chaque année. Cependant, environ <b>12 % des substances sont associées à des données confidentielles</b>, ce qui signifie que pour ces substances, ni les quantités produites ni importées ne sont divulguées. Et parmi ces substances confidentielles, un <i>grand nombre sont enregistrées sous le type NEONS</i>.</p><br>
+                <div class="img_dashboard11 code-container">
+                    <img src="./assets/neons.png" alt="neons" />
+                </div><br>
+                <p class="justify-align some-paragraph b">Cependant, il est important de ne pas tirer de conclusions hâtives. L’enregistrement NEONS ne signifie pas nécessairement un risque accru. Il est possible que ces substances soient moins significatives pour certains processus industriels, ce qui pourrait expliquer ce type d'enregistrement. Mais j’ai trouvé pertinent de souligner cette observation, car cela apporte une nuance intéressante dans l’analyse des enregistrements sous REACH.<br><br>Venons-en à ce qui nous intéresse le plus : <b>les risques associés aux substances</b>. </p><br>
+                <div class="img_dashboard11 code-container">
+                    <img src="./assets/reachrisques.png" alt="reachrisques" />
+                </div><br>
+            </div>
+        </div>
+    </section>
+    <br><br><br><br><br><br><br><br>
+    <section id="ch">
+        <div class="section-container">
+            <div class="about-details-container">
+                <p class="justify-align some-paragraph b">Par exemple, on recense environ <b>600 substances</b> dans la base REACH associées à des <b>risques cancérigènes</b> et près de <b>400 classées comme perturbateurs endocriniens</b>. En comparant avec l'inventaire américain, on constate une réduction de 33 % des substances liées aux risques de cancer et de 40 % pour les dangers environnementaux et l'accumulation. Ces résultats sont plutôt <i>encourageants</i>, bien que certaines catégories, comme les perturbateurs endocriniens, présentent des chiffres similaires dans les deux inventaires.<br><br>En tout, on dénombre <b>939 substances dangereuses encore actives</b> dans la base REACH, soit <b>35 % de moins qu'aux États-Unis</b>.</p><br>
+                <div class="img_dashboard11 code-container">
+                    <img src="./assets/reachperturbateurs.png" alt="reachperturbateurs" />
+                </div><br>
+                <p class="justify-align some-paragraph b">Si l'on zoome sur la <b>quantité de substances liées aux perturbateurs endocriniens importées ou fabriquées chaque année</b>, les chiffres révèlent qu'au moins <b>21 millions de tonnes de substances ont été importées ou produites en 2023</b>. <br>Ce chiffre est considérable, mais encore plus frappante est la différence par rapport aux années précédentes. <br><br><b>Qu'est-ce qui pourrait expliquer cette hausse ?</b> <br>Après quelques recherches, il apparaît que des modifications importantes de la réglementation européenne ont eu lieu en 2022, renforçant les exigences en matière de transparence. Cette tendance est observable pour d'autres catégories de risques également. Même si des risques subsistent, il est clair que la transparence en Europe s'accroît, ce qui constitue un point positif.</p><br>
+            </div>
+        </div>
+    </section>
+    <br><br><br><br><br><br>
+    <section id="ch">
+        <div class="section-container">
+            <div class="about-details-container">
+                <p class="justify-align some-paragraph">
+                    <div class="num" data-number="4"><h3>Présence de métaux dans la cosmétique</h3></div>
+                </p>
+                <p class="justify-align some-paragraph b">En poursuivant mes recherches, j’ai découvert un jeu de données du Département de la Santé et de l'Hygiène Mentale de New York, qui contient les résultats de tests de laboratoire sur des produits cosmétiques. </p><br>
+                <div class="img_dashboard11 code-container">
+                    <img src="./assets/metaux.png" alt="metaux" />
+                </div><br>
+                <p class="justify-align some-paragraph b">Les proportions de détection de métaux entre 2010 et 2023 révèlent des résultats préoccupants : sur 323 produits analysés, 200 contenaient du plomb (lead) et 170 du mercure, ce qui est très inquiétant.<br><br>Mais d'où proviennent ces produits ?</p><br>
+                <div class="img_dashboard11 code-container">
+                    <img src="./assets/metaux2.png" alt="metaux2" />
+                </div><br>
+            </div>
+        </div>
+    </section>
+    <section id="ch">
+        <div class="section-container">
+            <div class="about-details-container">
+                <p class="justify-align some-paragraph b">En poursuivant mes recherches, j’ai découvert un jeu de données du Département de la Santé et de l'Hygiène Mentale de New York, qui contient les résultats de tests de laboratoire sur des produits cosmétiques. </p><br>
+                <div class="img_dashboard11 code-container">
+                    <img src="./assets/metaux.png" alt="metaux" />
+                </div><br>
+                <p class="justify-align some-paragraph b">En examinant les quatre pays producteurs associés aux niveaux de métaux détectés, nous constatons que le pays en tête est soit non identifié, soit non enregistré. Ensuite, viennent l’Inde, le Pakistan, et les États-Unis. L’Inde et le Pakistan ne sont pas particulièrement réputés pour leurs réglementations strictes en matière de cosmétiques, tandis que les États-Unis ne disposent pas d'un département de santé publique aussi rigoureux que celui de l’Union européenne. <br>Ainsi, bien que ces résultats soient alarmants, ils ne sont pas vraiment surprenants.</p><br><br><br>
+                <div class="details-container">
+                    <p class="justify-align some-paragraph b">Après avoir examiné en détail le marché de la cosmétique et rassemblé toutes les informations disponibles sur les substances chimiques, nous allons maintenant nous pencher sur deux ensembles de données spécifiques concernant des produits cosmétiques. L'objectif est d'analyser leurs ingrédients et d'évaluer les risques associés.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="ch">
+        <div class="section-container">
+
+            <br><br><br><br><br><br><br>
+            <p class="section__text__p1">Full project on github</p>
+            <div class="contact-info-container">
+                <img
+                src="./assets/github.png"
+                alt="My Github profile"
+                class="icon"
+                onclick="location.href='https://github.com/Cassouletti/myportfoliolea/tree/main/Projet%20sur%20les%20cosm%C3%A9tiques%20et%20substances%20chimiques'"
+                />
+                <p><a href="mailto:bensoussanleaai@gmail.com">Bensoussanleaai@gmail.com</a></p>
+            </div>
+            <div class="btn-container">
+                <button class="btn btn-color-1" onclick="location.href='research.html'">
+                    Previous
+                </button>
+                <button class="btn btn-color-1" onclick="location.href='cosmetics.html'">
+                    Next part
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.querySelector('.menu-links');
+            menu.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

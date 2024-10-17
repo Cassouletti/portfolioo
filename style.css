@@ -443,8 +443,10 @@ article .icon {
 }
 .img_dashboard2 {
   display: flex;
-
   align-items: center; /* Centre verticalement si nécessaire */
+}
+.j {
+  justify-content: center;
 }
 
 .img_dashboard3 {
@@ -460,6 +462,31 @@ article .icon {
   display: flex;
   align-items: center; /* Centre verticalement si nécessaire */
 }
+.img_dashboard6 {
+  display: flex;
+  align-items: center; /* Centre verticalement si nécessaire */
+}
+.img_dashboard7 {
+  display: flex;
+  align-items: center; /* Centre verticalement si nécessaire */
+}
+.img_dashboard8 {
+  display: flex;
+  align-items: center; /* Centre verticalement si nécessaire */
+}
+.img_dashboard9 {
+  display: flex;
+  align-items: center; /* Centre verticalement si nécessaire */
+    justify-content: center;
+}
+.img_dashboard10 {
+  display: flex;
+  align-items: center; /* Centre verticalement si nécessaire */
+}
+.img_dashboard11 {
+  display: flex;
+  align-items: center; /* Centre verticalement si nécessaire */
+}
 
 .img_dashboard img {
   width: 110%; /* L'image est plus large que le conteneur */
@@ -471,6 +498,28 @@ article .icon {
   border-radius: 0.8rem;
   border: rgb(53, 53, 53) 0.1rem solid;
   border-color: rgb(166,199,216);
+}
+.img_dashboard10 img {
+  width: 40%; /* L'image est plus large que le conteneur */
+  height: auto; /* Garde les proportions correctes */
+  border-radius: 0.8rem;
+  border: rgb(53, 53, 53) 0.1rem solid;
+  border-color: rgb(0,0,0);
+}
+
+.img_dashboard11 img {
+  width: 50%; /* L'image est plus large que le conteneur */
+  height: auto; /* Garde les proportions correctes */
+  border-radius: 0.8rem;
+  border: rgb(53, 53, 53) 0.1rem solid;
+  border-color: rgb(0,0,0);
+}
+.img_dashboard9 img {
+  width: 70%; /* L'image est plus large que le conteneur */
+  height: auto; /* Garde les proportions correctes */
+  border-radius: 0.8rem;
+  border: rgb(53, 53, 53) 0.1rem solid;
+  border-color: rgb(0,0,0);
 }
 
 .img_dashboard3 img {
@@ -487,6 +536,30 @@ article .icon {
 }
 .img_dashboard5 img {
   width: 40%; /* L'image est plus large que le conteneur */
+  height: auto; /* Garde les proportions correctes */
+  border-radius: 0.8rem;
+  border: rgb(53, 53, 53) 0.1rem solid;
+  border-color: rgb(166,199,216);
+  background: rgba(255,255,255,0.5);
+}
+.img_dashboard5 img {
+  width: 50%; /* L'image est plus large que le conteneur */
+  height: auto; /* Garde les proportions correctes */
+  border-radius: 0.8rem;
+  border: rgb(53, 53, 53) 0.1rem solid;
+  border-color: rgb(166,199,216);
+  background: rgba(255,255,255,0.5);
+}
+.img_dashboard7 img {
+  width: 30%; /* L'image est plus large que le conteneur */
+  height: auto; /* Garde les proportions correctes */
+  border-radius: 0.8rem;
+  border: rgb(53, 53, 53) 0.1rem solid;
+  border-color: rgb(166,199,216);
+  background: rgba(255,255,255,0.5);
+}
+.img_dashboard8 img {
+  width: 20%; /* L'image est plus large que le conteneur */
   height: auto; /* Garde les proportions correctes */
   border-radius: 0.8rem;
   border: rgb(53, 53, 53) 0.1rem solid;

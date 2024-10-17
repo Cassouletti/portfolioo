@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel Projects</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaqueries.css">
+    <link rel="stylesheet" href="./python/default.min.css">
+    <style>
+        body {
+            background-image: url(./assets/cloudsnine.png);
+        }
+    </style>
+</head>
+<body>
+    <nav id="desktop-nav">
+        <div class="logo">Léa Bensoussan</div>
+        <div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="research.html">Cosmetic</a></li>
+                <li><a href="excel.html">Excel</a></li>
+                <li><a href="python.html">Python</a></li>
+                <li><a href="powerbi.html">Power Bi</a></li>
+            </ul>
+        </div>
+    </nav>
+    <nav id="hamburger-nav">
+        <div class="logo">Léa Bensoussan</div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <li><a href="index.html" onclick="toggleMenu()">Home</a></li>
+                <li><a href="research.html" onclick="toggleMenu()">Cosmetic</a></li>
+                <li><a href="excel.html" onclick="toggleMenu()">Excel</a></li>
+                <li><a href="python.html" onclick="toggleMenu()">Python</a></li>
+                <li><a href="powerbi.html" onclick="toggleMenu()">Power Bi</a></li>
+            </div>
+        </div>
+    </nav>
+    <section id="about">
+        <p class="section__text__p1">Cosmetics and Chemical Substances</p>
+        <h1 class="title">Cosmetics Analysis</h1>
+        <div class="section-container">
+            <div class="about-details-container">
+                <br><br><br>
+                <div>
+                    <p class="justify-align some-paragraph">
+                        <div class="num" data-number="1"><h3>Analyse de produits cosmétiques Californiens</h3></div>
+                    </p>
+                </div>
+                <p class="justify-align some-paragraph b"><br>Il s’agit donc ici des données du CSCP, le programme de sécurité cosmétique californien. Leur objectif est de recueillir des informations sur les ingrédients dangereux ou potentiellement dangereux présents dans les produits cosmétiques vendus en Californie. Les données comprennent les noms des produits, des entreprises, les marques, les catégories, ainsi que les numéros CAS des ingrédients déclarés dangereux. <br>Cette base de données, mise à jour en août 2024, recense environ 33 000 produits et exactement 106 substances dangereuses ou potentiellement dangereuses (DOPD). </p><br><br>
+                <div class="img_dashboard10 code-container">
+                    <img src="./assets/cosmetics3.png" alt="cosmetics3" />
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="ch">
+        <div class="section-container">
+            <div class="about-details-container">
+                <p class="justify-align some-paragraph b">Ici, nous pouvons observer les substances DOPD les plus fréquentes dans les produits cosmétiques autorisés aux États-Unis, avec le dioxyde de titane en tête. Cette substance est souvent utilisée comme colorant blanc pour les crèmes, en tant que filtre solaire, et pour donner une apparence brillante à certains produits alimentaires, comme les bonbons ou les chewing-gums. <br>Cependant, elle soulève des inquiétudes car elle peut pénétrer les cellules humaines et provoquer des effets indésirables, tels que des cancers ou des mutations génétiques. En 2021, son utilisation dans les aliments a été interdite au sein de l’UE, mais elle continue d’être utilisée dans les cosmétiques, sous prétexte que son taux de concentration serait contrôlé.</p><br>
+                <div class="img_dashboard10 code-container">
+                    <img src="./assets/cosmetics4.png" alt="cosmetics4" />
+                </div>
+                <p class="justify-align some-paragraph b">Nous pouvons également examiner les substances DOPD qui ont été le plus retirées des cosmétiques aux États-Unis, et sans surprise, le dioxyde de titane se trouve encore en première position.<br><br>La base de données fournit aussi le nombre de substances DOPD par produit, ce qui nous permet d'identifier les produits les plus problématiques à éviter lors de nos achats. Les voici:</p>
+                <div class="img_dashboard10 code-container">
+                    <img src="./assets/cosmetics1.png" alt="cosmetics1" />
+                </div>
+            </div>
+        </div>
+    </section>
+    <br><br><br>    <br><br><br>    <br><br><br>    <br><br>
+    <section id="ch">
+        <div class="section-container">
+            <div class="about-details-container">
+              <p class="justify-align some-paragraph b">Certains de ces produits contiennent jusqu'à 8 substances DOPD, ce qui est énorme, alors que la moyenne pour tous les produits de la base de données est d’environ 1,1 substance dangereuse par produit. </p><br>
+              <div class="img_dashboard10 code-container">
+                <img src="./assets/cosmetics2.png" alt="cosmetics2" />
+            </div>
+            <p class="justify-align some-paragraph b"><br>Cela montre une grande disparité. Il est intéressant de noter que ces 4 produits proviennent tous de la même marque, Regis Corporation, spécialisée dans les soins capillaires. Je ne fais pas la défense du diable, mais il est vrai que les produits pour la coloration des cheveux sont souvent très chimiques.<br><br>Vous vous rappelez que j'avais utilisé trois bases de données différentes pour identifier les substances préoccupantes ? L'une d'elles, AGRITOX, peut nous montrer le nombre de substances par catégorie et par type de danger.</p><br>
+            <div class="img_dashboard2 code-container">
+                <img src="./assets/agri.png" alt="agri" />
+            </div>
+        </div>
+    </div>
+</section>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<section id="ch">
+    <div class="section-container">
+        <div class="about-details-container">
+            <p class="justify-align some-paragraph b"><br>Nous constatons que les produits de coloration pour les cheveux présentent des risques importants, tels que l'irritation oculaire et la sensibilisation cutanée. C'est pourquoi les coiffeurs portent souvent des gants.<br><br>Ici, on peut voir les catégories avec le plus de substances dangereuses, qui incluent le maquillage, où l'on retrouve beaucoup de talc (lié à des risques de cancer).<br></p>
+            <div class="img_dashboard2 code-container">
+                <img src="./assets/makeup.png" alt="makeup" />
+            </div>
+            <p class="justify-align some-paragraph b"><br>Et si nous examinons les entreprises ayant le plus de substances retirées du marché, nous trouvons KORRES, présentée comme une marque "naturelle".<br></p>
+            <div class="img_dashboard2 code-container">
+                <img src="./assets/cosmetics5.png" alt="cosmetics5" />
+            </div>
+        </div>
+    </div>
+</section>
+<br><br><br>
+<section id="ch">
+    <div class="section-container">
+        <div class="about-details-container">
+            <p class="justify-align some-paragraph b">En ce qui concerne les 106 substances DOPD de la base de données, 42 d’entre elles sont associées à des risques de cancer et 15 à des perturbateurs endocriniens. En examinant leur répartition, nous constatons que 1 725 produits sont liés à des risques de cancer, tandis que 1 747 le sont à des perturbateurs endocriniens et à des problèmes de reproduction.</p><br><br><br>
+            <div>
+                <p class="justify-align some-paragraph">
+                    <div class="num" data-number="2"><h3>Analyse de produits cosmétiques Sephora</h3></div>
+                </p>
+            </div>
+            <p class="justify-align some-paragraph b">Dans cette analyse, nous nous concentrons sur une base de données contenant près de 1 500 produits Sephora et leurs ingrédients. Contrairement à l’autre base de données, qui associait les substances dangereuses à leurs numéros CAS, ici nous avons une liste INCI (International Nomenclature of Cosmetic Ingredients).<br>Je rappelle qu’INCI est un système de dénomination plus général que les numéros CAS. </p><br>
+            <div class="img_dashboard11 code-container">
+                <img src="./assets/casinci.png" alt="casinci" />
+            </div><br>
+            <p class="justify-align some-paragraph b">Par exemple, le nom INCI "Mel Extract" peut correspondre à plusieurs numéros CAS différents, comme celui pour un extrait complexe de miel ou pour le miel lui-même. Cela rend l'identification précise des substances dans un produit difficile à partir de la seule liste INCI.</p><br>
+            <div class="img_dashboard11 code-container">
+                <img src="./assets/sephora1.png" alt="sephora1" />
+            </div><br>
+        </div><br>
+    </div>
+</section>
+<br><br><br><br><br><br><br><br><br><br><br>
+<section id="ch">
+    <div class="section-container">
+        <div class="about-details-container">
+            <p class="justify-align some-paragraph b">En analysant les 1 500 produits de la base de données Sephora, j’ai constaté que plus de 700 contiennent au moins une substance DOPD. De plus, 160 produits renferment des substances interdites, c'est-à-dire des ingrédients qui ont été proscrits et qui ne doivent plus être présents dans les cosmétiques à partir d'une date précise. <br>Certaines substances seront interdites à partir de 2025, tandis que d'autres resteront autorisées jusqu'en 2028. Le nombre moyen de substances DOPD par produit est de 0,93, et pour les substances interdites, ce chiffre s’élève à 0,12.</p><br>
+            <div class="img_dashboard11 code-container">
+                <img src="./assets/sephora2.png" alt="sephora2" />
+            </div><br>
+            <p class="justify-align some-paragraph b">Ensuite, j’ai cherché à déterminer si la présence de ces substances dans les produits avait un impact sur le prix. En calculant les moyennes, j’ai trouvé que le prix moyen de tous les produits confondus est de 56 dollars. Pour les produits contenant des substances DOPD, ce chiffre augmente légèrement à 61 dollars, mais cette différence n’est pas significative. <br>Lorsque nous regardons la médiane, nous obtenons 43 dollars pour l’ensemble des produits, contre 46 dollars pour ceux contenant des substances DOPD. Là encore, il y a une légère augmentation, mais pas suffisamment significative pour en tirer des conclusions claires.</p><br>
+            <div class="img_dashboard11 code-container">
+                <img src="./assets/sephora3.png" alt="sephora3" />
+            </div><br>
+        </div>
+    </div>
+</section>
+<br><br><br><br><br><br><br><br><br><br>
+<section id="ch">
+    <div class="section-container">
+        <div class="about-details-container">
+            <p class="justify-align some-paragraph b">Une observation intéressante se dégage lorsque nous analysons la répartition des produits en fonction du nombre de substances DOPD. Il y a environ 700 produits sans aucune substance dangereuse, suivis de 370 produits contenant au moins une substance DOPD, et ainsi de suite. Cela montre que les produits avec un grand nombre de substances dangereuses sont moins nombreux, ce qui est encourageant.</p><br>
+            <div class="img_dashboard11 code-container">
+                <img src="./assets/sephora4.png" alt="sephora4" />
+            </div><br>
+            <p class="justify-align some-paragraph b">Une tendance similaire est observée pour les produits contenant des substances interdites.</p><br>
+            <div class="img_dashboard10 code-container">
+                <img src="./assets/sephora5.png" alt="sephora5" />
+            </div><br>
+        </div>
+    </div>
+</section>
+<br><br><br><br>
+<section id="ch">
+    <div class="section-container">
+        <div class="about-details-container">
+            <p class="justify-align some-paragraph b">Enfin, comme pour l'autre base de données cosmétique, j’ai également regardé quelles entreprises avaient le plus de produits dangereux. Parmi elles, on retrouve des marques bien connues comme Clinique et La Mer. Ces marques, bien que réputées, contiennent tout de même plusieurs produits avec des substances préoccupantes, ce qui mérite une réflexion plus approfondie sur les ingrédients qu’elles utilisent.</p><br><br><br>
+            <div class="details-container">
+                <p class="justify-align some-paragraph b">Au début de ce projet, j'avais beaucoup de préjugés : pour moi, tous les ingrédients étaient mauvais, point final. Mais la réalité est plus complexe. En découvrant la différence entre les numéros CAS et les noms INCI, j’ai d'abord ressenti une certaine méfiance, comme certaines marques cache des informations et que le greenwashing est encore présent. Le greenwashing, c'est donner une fausse impression d'écologie à des produits pour des raisons marketing. <br>Et oui, il y a une part de vérité là-dedans : la liste INCI ne reflète pas toujours la vraie nature des ingrédients, et de nombreuses substances présentent des risques. Même l'Union européenne, bien que plus stricte, autorise encore trop de produits dangereux.<br><br>Toutefois, en étudiant le marché européen, j’ai remarqué que des efforts concrets sont faits pour améliorer la transparence et la sécurité des substances chimiques. De plus en plus de substances dangereuses sont retirées du marché grâce à un suivi rigoureux. Cette évolution m’a amenée à une question importante : <b>pourquoi continue-t-on à utiliser certaines de ces substances ?</b> C'est une réflexion ouverte que je vous invite à partager.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="ch">
+    <div class="section-container">
+        <p class="section__text__p1">Full project on github</p>
+        <div class="contact-info-container">
+            <img
+            src="./assets/github.png"
+            alt="My Github profile"
+            class="icon"
+            onclick="location.href='https://github.com/Cassouletti/myportfoliolea/tree/main/Projet%20sur%20les%20cosm%C3%A9tiques%20et%20substances%20chimiques'"
+            />
+            <p><a href="mailto:bensoussanleaai@gmail.com">Bensoussanleaai@gmail.com</a></p>
+        </div>
+        <div class="btn-container">
+            <button class="btn btn-color-1" onclick="location.href='market.html'">
+                Previous
+            </button>
+        </div>
+    </div>
+</section>
+
+<script>
+    function toggleMenu() {
+        var menu = document.querySelector('.menu-links');
+        menu.classList.toggle('active');
+    }
+</script>
+</body>
+</html>

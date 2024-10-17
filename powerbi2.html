@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel Projects</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaqueries.css">
+    <style>
+        body {
+          background-image: url(./assets/roseclouds.png);
+      }
+  </style>
+</head>
+<body>
+    <nav id="desktop-nav">
+        <div class="logo">Léa Bensoussan</div>
+        <div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="research.html">Cosmetic</a></li>
+                <li><a href="excel.html">Excel</a></li>
+                <li><a href="python.html">Python</a></li>
+                <li><a href="powerbi.html">Power Bi</a></li>
+            </ul>
+        </div>
+    </nav>
+    <nav id="hamburger-nav">
+        <div class="logo">Léa Bensoussan</div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <li><a href="index.html" onclick="toggleMenu()">Home</a></li>
+                <li><a href="research.html" onclick="toggleMenu()">Cosmetic</a></li>
+                <li><a href="excel.html" onclick="toggleMenu()">Excel</a></li>
+                <li><a href="python.html" onclick="toggleMenu()">Python</a></li>
+                <li><a href="powerbi.html" onclick="toggleMenu()">Power Bi</a></li>
+            </div>
+        </div>
+    </nav>
+    <h1 class="title">2.</h1>
+    <section id="about">
+        <p class="section__text__p1">Project</p>
+        <h1 class="title">Crédit Agricole</h1>
+        <div class="section-container">
+            <div class="about-details-container">
+                <div class="about-containers">
+                    <div class="details-container">
+                        <h3>Problématique et objectifs</h3>
+                        <p class="justify-align some-paragraph"><br>Dans le cadre d'un projet visant à <b>optimiser les stratégies marketing</b> du Crédit Agricole, ma mission est portée sur une base de données clients détaillée. Ma mission consistait à concevoir un <b>tableau de bord dynamique et interactif</b> sur Power BI, afin de fournir des <i>insights précis et actionnables au service marketing</i>. Cette initiative est cruciale pour affiner la compréhension des besoins clients et piloter efficacement les campagnes marketing à venir. Je précise que <b>ces données sont fictives</b>.</p>
+                    </div>
+                </div><br><br>
+                <div>
+                    <p class="justify-align some-paragraph">
+                        <div class="num" data-number="1"><h3>Préparation des Données à l'aide de Power Query & Dax</h3></div>
+                        <div class="num" data-number="2"><h3>Analyse Descriptive</h3></div>
+                        <div class="num" data-number="3"><h3>Visualisation et Rapport</h3></div>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <img
+        src="./assets/arrow.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='#dashboard'"
+        />
+    </section>
+
+    <section id="dashboard">
+     <h1 class="title">Dashboard</h1>
+     <br>
+     <div class="img_dashboard9">
+        <img src="./assets/ca1.png" alt="ca1" />
+    </div> <br>
+    <div class="img_dashboard9">
+        <img src="./assets/ca2.png" alt="ca2" />
+    </div>
+</section>
+<section id="dashboard">
+ <div class="img_dashboard9">
+    <img src="./assets/ca3.png" alt="ca3" />
+</div><br>
+<div class="img_dashboard9">
+    <img src="./assets/ca4.png" alt="ca4" />
+</div><br>
+<div class="img_dashboard9">
+    <img src="./assets/ca5.png" alt="ca5" />
+</div>
+<br><br><br>
+<img
+src="./assets/arrow.png"
+alt="Arrow icon"
+class="icon arrow2"
+onclick="location.href='#observation'"
+/>
+</section>
+
+<section id="observation">
+ <p class="section__text__p1">Explore My</p>
+ <h1 class="title">Observations</h1>
+ <div class="experience-details-container">
+   <div class="about-containers">
+     <div class="details-container">
+       <h2 class="experience-sub-title">Général</h2>
+       <ul class="b justify-align">
+        <li>Les types de compte ont plus ou moins la même somme de transactions.</li>
+        <li>Le plus grand nombre de transactions se passe aux mois de Mai, Août, Décembre, Juillet et janvier.</li>
+        <li>Les jeunes n’ont pas beaucoup de comptes par rapport aux plus âgés, et encore moins de prêts en cours.</li>
+        <li>Le métier avec le plus grand revenu annuel est le fonctionnaire opérationnel des services diplomatiques. Et le métier gagnant le moins et le chirurgien arboricole.</li>
+    </ul>
+</div>
+<div class="details-container">
+   <h2 class="experience-sub-title">Général</h2>
+   <ul class="b justify-align">
+    <li>Le métier avec le plus grand nombre de prêts en cours est le métier de professeur.</li>
+    <li>Les états avec la plus grande somme de revenus annuels sont AA, AE et AP. Ces états ont beaucoup de clients.</li>
+    <li>Les états avec le moins de clients sont KS, AK et SC.</li>
+    <li>L’état avec le plus grand score de crédit est AK.</li>
+</ul>
+</div>
+</div>
+</div>
+<img
+src="./assets/arrow.png"
+alt="Arrow icon"
+class="icon arrow"
+onclick="location.href='#recommendations'"
+/>
+</section>
+
+<section id="recommendations" class = "recommendations">
+    <p class="section__text__p1">Explore my</p>
+    <h1 class="title">Recommendations</h1>
+    <div class="about-containers2">
+        <div class="details-container">
+            <ul class="b justify-align">
+                <li><i>Optimisation des services pour les mois de forte activité (Mai, Août, Décembre, Juillet et Janvier)</i></li><br>
+                <li><i>Ciblage des jeunes pour l'ouverture de comptes et les prêts</i></li><br>
+                <li><i>Développement d'opportunités dans les États avec peu de clients (KS, AK, SC)</i></li><br>
+                <li><i>Exploiter le potentiel des États avec des revenus élevés (AA, AE, AP)</i></li>
+            </ul>
+        </div>
+    </div>
+    <br><br>
+    <p class="section__text__p1">Full project on github</p>
+    <div class="contact-info-container">
+     <img
+     src="./assets/github.png"
+     alt="My Github profile"
+     class="icon"
+     onclick="location.href='https://github.com/'"
+     />
+     <p><a href="mailto:bensoussanleaai@gmail.com">Bensoussanleaai@gmail.com</a></p>
+ </div>
+ <div class="btn-container">
+     <button class="btn btn-color-1" onclick="location.href='powerbi.html'">
+       Previous
+   </button>
+</div>
+<br>
+<br>
+<br>
+</section>
+
+<script>
+    function toggleMenu() {
+        var menu = document.querySelector('.menu-links');
+        menu.classList.toggle('active');
+    }
+</script>
+</body>
+</html>

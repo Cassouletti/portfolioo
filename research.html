@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel Projects</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaqueries.css">
+    <link rel="stylesheet" href="./python/default.min.css">
+    <style>
+        body {
+            background-image: url(./assets/cloudsnine.png);
+        }
+    </style>
+</head>
+<body>
+    <nav id="desktop-nav">
+        <div class="logo">Léa Bensoussan</div>
+        <div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="research.html">Cosmetic</a></li>
+                <li><a href="excel.html">Excel</a></li>
+                <li><a href="python.html">Python</a></li>
+                <li><a href="powerbi.html">Power Bi</a></li>
+            </ul>
+        </div>
+    </nav>
+    <nav id="hamburger-nav">
+        <div class="logo">Léa Bensoussan</div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <li><a href="index.html" onclick="toggleMenu()">Home</a></li>
+                <li><a href="research.html" onclick="toggleMenu()">Cosmetic</a></li>
+                <li><a href="excel.html" onclick="toggleMenu()">Excel</a></li>
+                <li><a href="python.html" onclick="toggleMenu()">Python</a></li>
+                <li><a href="powerbi.html" onclick="toggleMenu()">Power Bi</a></li>
+            </div>
+        </div>
+    </nav>
+    <section id="about">
+        <p class="section__text__p1">Cosmetics and Chemical Substances</p>
+        <h1 class="title">Research and Background</h1>
+        <div class="section-container">
+            <div class="about-details-container">
+                <div class="about-containers2">
+                    <div class="details-container">
+                        <h3>Introduction</h3>
+                        <p class="justify-align some-paragraph"><br>Mon projet porte sur la <b><i>cosmétique et ses potentielles conséquences pour la santé</i></b>. Il y a quelques années, après avoir fait face à des problèmes de peau, notamment de l’acné, je me suis intéressée au mouvement de la <i>clean beauty</i>. Ce concept prône l’utilisation de produits cosmétiques non toxiques, naturels, et transparents, respectueux à la fois de la santé humaine et de l’environnement. <br><br>Cependant, en cherchant des solutions pour ma peau, je me suis rapidement rendu compte qu'il était extrêmement difficile de comprendre les listes d'ingrédients cosmétiques sans une formation scientifique. Face à ce constat, j'ai décidé de centrer mon projet sur un aspect précis : <b>la toxicité des ingrédients et les risques qu’ils peuvent poser pour la santé</b>.
+                        </p>
+                    </div>
+                </div>
+                <p class="justify-align some-paragraph b"><br>J’ai donc rassemblé des données sur plus de <i>1000 produits Sephora,</i> incluant leurs listes <b>INCI</b> (International Nomenclature of Cosmetic Ingredients), qui détaillent les ingrédients du plus concentré au moins. Bien que l’INCI informe sur les substances présentes, elle ne précise pas les quantités, compliquant l'évaluation de leur impact.<br><br>Le dosage reste pourtant crucial pour déterminer la sûreté et l'efficacité d’un ingrédient. Au-delà de l'identification des substances, il est essentiel de comprendre comment elles sont régulées. Cela m'a conduit à <b>explorer les réglementations en vigueur sur ces substances</b>.</p>
+
+            </div>
+        </div>
+    </section>
+    <br>
+
+    <section id="ch">
+        <h2 class="subtitle">Étude de la Problématique et de son Environnement</h2>
+        <br>
+        <div class="section-container">
+            <div class="about-details-container">
+                <div>
+                    <p class="justify-align some-paragraph">
+                        <div class="num" data-number="1"><h3>Inventaire TSCA (États-Unis)</h3></div>
+                    </p>
+                </div>
+                <div class="img_dashboard2 code-container">
+                    <img src="./assets/tsca.png" alt="tsca" />
+                </div>
+
+                <p class="justify-align some-paragraph b"><br>En poursuivant mes recherches sur la réglementation des substances chimiques, j’ai découvert l’importance de l’<i>inventaire de contrôle des substances chimiques</i> du <b>TSCA</b> (Toxic Substances Control Act), un outil fondamental pour le <i>marché américain</i>. <br><br>Cet inventaire, géré par l'EPA (Environmental Protection Agency), est crucial pour assurer la <i>traçabilité des substances chimiques présentes sur le territoire américain</i>. Le dernier inventaire, publié en avril 2024, répertorie un total de 86 741 substances chimiques, divisées entre une liste publique et une liste confidentielle.<br><br>L’inventaire TSCA permet de vérifier si une substance chimique est encore <b>active sur le marché américain ou si elle a été retirée</b>. Grâce au numéro <b><i>CAS (Chemical Abstracts Service)</i></b>, l’<b>identifiant unique</b> pour chaque substance chimique, il est possible de suivre et d’analyser les produits de manière cohérente à travers diverses bases de données.<br><br>L’inventaire TSCA constitue donc notre première base de donnée.</p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            </div>
+        </div>
+    </section>
+
+    <br><br><br><br><br><br><br><br><br><br>
+
+    <section id="ch">
+        <div class="section-container">
+            <div class="about-details-container">
+                <br><br>
+                <div class="img_dashboard2 code-container">
+                    <img src="./assets/pano1.png" alt="pano1" />
+                </div>
+                <p class="justify-align some-paragraph b"><br>La <b><i>colonne ID</i></b> est utile pour <i>identifier individuellement chaque ligne de données et chaque employé</i>, mais n'apporte <b>aucune valeur analytique</b>. En effet, elle ne contient pas d'informations quantitatives ou qualitatives pertinentes pour l'<i>analyse des facteurs d'absentéisme</i>.<br><b>Retirer la colonne ID</b> permet donc de <i>se concentrer sur les variables significatives</i>, en évitant que cet identifiant n'influence aucun résultat.</p>
+                <br><br>
+                <p class="justify-align some-paragraph">
+                    <div class="num" data-number="2"><h3>REACH (Union Européenne)</h3></div>
+                </p>
+                <div class="img_dashboard2 code-container">
+                    <img src="./assets/reach.png" alt="reach" />
+                </div>
+            </div>
+        </div>
+    </section>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <section id="ch">
+        <div class="section-container">
+            <div class="about-details-container">
+                <p class="justify-align some-paragraph b"><br>Après avoir exploré l'inventaire TSCA pour le marché américain, je me suis naturellement intéressée au <b>marché européen</b>, où la réglementation des substances chimiques est plus stricte. L'Union européenne a mis en place <b><i>REACH</i></b>, un règlement adopté en 2007 qui encadre l'<i>enregistrement, l'évaluation et la restriction des substances chimiques pour protéger la santé humaine et l'environnement</i>. Contrairement aux États-Unis, l’Europe utilise des numéros <b>EC (European Community)</b>, équivalents aux numéros CAS américains, pour identifier les substances. <br><br>L’ECHA supervise l'application de REACH, qui attribue aux substances trois statuts d'enregistrement :</p><br>
+                <ul class="c justify-align code-container">
+                    <li><b>Active</b> : La substance est toujours utilisée ou fabriquée conformément à REACH.</li><br>
+                    <li><b>Cease Manufacture</b> : La production a cessé, mais les stocks peuvent être utilisés.</li><br>
+                    <li><b>No Longer Valid</b> : L’enregistrement est expiré et la fabrication ou l’importation est interdite sans actions correctives.</li><br>
+                </ul>
+                <p class="justify-align some-paragraph b"><br>REACH constituera ainsi notre deuxième base de données.</p>
+                <br>
+                <div class="img_dashboard2 code-container">
+                    <img src="./assets/pano2.png" alt="pano2" />
+                </div>
+                <br><br><br>
+                <p class="justify-align some-paragraph">
+                    <div class="num" data-number="3"><h3>Substances Préoccupantes</h3></div>
+                </p><br>
+            </div>
+        </div>
+    </section>
+    <br><br><br><br><br><br><br><br><br><br>
+    <section id="ch">
+        <div class="section-container">
+            <div class="about-details-container">
+                <p class="justify-align some-paragraph b"><br>En approfondissant mes recherches, je me suis penchée sur les <b>substances chimiques préoccupantes</b> et ai découvert plusieurs bases de données pertinentes. Ces ressources offrent des informations essentielles sur la toxicité et les risques associés à certains ingrédients. Parmi celles-ci, on trouve :</p><br>
+                <ul class="c justify-align code-container">
+                    <li><b>Agritox</b>, qui évalue des substances actives.</li><br>
+                    <li><b>SVHC</b> (Substances of Very High Concern), qui recense les substances les plus préoccupantes en Europe.</li><br>
+                    <li>La <b>Reportable Ingredients List</b>, utilisée pour signaler les ingrédients potentiellement nocifs.</li><br>
+                    <li>La <b>Watch Out</b>, qui identifie des substances à surveiller de près.</li><br>
+                    <li>Et enfin, les bases traitant de la <b>présence de métaux lourds</b> dans les produits cosmétiques.</li><br>
+                </ul>
+                <br><br>
+                <p class="justify-align some-paragraph">
+                    <div class="num" data-number="4"><h3>AGRITOX</h3></div>
+                </p><br>
+                <div class="img_dashboard2 code-container">
+                    <img src="./assets/agritox.png" alt="agritox" />
+                </div>
+            </div>
+        </div>
+    </section>
+    <br><br><br><br><br><br><br><br><br>
+
+    <section id="ch">
+        <div class="section-container">
+            <div class="about-details-container">
+                <p class="justify-align some-paragraph b"><br>La base de données <b>AGRITOX</b>, créée en 1986 par l'INRA (Institut National de la Recherche Agronomique), est une ressource essentielle pour l'<b><i>évaluation des substances actives en France et en Europe</i></b>. <br>Elle fournit des informations sur des substances chimiques strictement réglementées dans divers secteurs, notamment les produits phytopharmaceutiques, les pesticides, et potentiellement les cosmétiques. L’objectif est de délivrer des données fiables sur des <b>substances ayant un impact sur la santé humaine, l’environnement et la biodiversité</b>. <br><br>Chaque substance active est identifiée par des critères précis, tels que le numéro CAS et le numéro EC (European Community number). AGRITOX offre des détails sur la <i>toxicité aiguë</i> des substances, qu'elle soit orale, cutanée ou par inhalation, ainsi que sur d'autres risques potentiels. Cette base est donc une ressource précieuse pour les chercheurs et les régulateurs, soucieux de garantir la sécurité des produits cosmétiques et de limiter l’exposition à des substances dangereuses. <br><br>AGRITOX sera ainsi notre troisième base de données.</p><br>
+                <div class="img_dashboard2 code-container">
+                    <img src="./assets/pano3.png" alt="pano3" />
+                </div>
+            </div>
+        </div>
+    </section>
+    <br><br><br><br><br><br><br><br>
+    <section id="ch">
+        <div class="section-container">
+            <div class="about-details-container">
+                <p class="justify-align some-paragraph">
+                    <div class="num" data-number="5"><h3>Liste des substances extrêmement préoccupantes (SVHC)</h3></div>
+                </p><br>
+                <div class="img_dashboard2 code-container">
+                    <img src="./assets/svhc.png" alt="svhc" />
+                </div>
+                <p class="justify-align some-paragraph b"><br>Cette liste, ou Substances of Very High Concern, est un élément central de la <b>réglementation européenne REACH</b>. Cette liste inclut des substances qui sont jugées particulièrement <b>dangereuses en raison de leurs propriétés chimiques ou de leurs effets toxiques potentiels</b>.<br>Une substance est classée comme SVHC si elle remplit l'un ou plusieurs des critères suivants :</p><br>
+                <ul class="c justify-align code-container">
+                    <li><b>Cancérigène, mutagène ou toxique pour la reproduction (CMR)</b></li><br>
+                    <li><b>Persistante, bioaccumulative et toxique (PBT)</b> : Substances qui ne se dégradent pas facilement dans l'environnement, s'accumulent dans les organismes vivants et peuvent avoir des effets toxiques à long terme.</li><br>
+                    <li><b>Très persistante et très bioaccumulative (vPvB)</b> : Substances encore plus résistantes à la dégradation et s'accumulant fortement dans les organismes vivants.</li><br>
+                    <li><b>Autres préoccupations graves</b> : Ce critère peut inclure des substances présentant des effets perturbateurs endocriniens, qui interfèrent avec le système hormonal, ou toute autre propriété qui pose un risque similaire.</li><br>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <br><br><br><br><br><br><br>
+
+    <section id="ch">
+        <div class="section-container">
+            <div class="about-details-container">
+                <p class="justify-align some-paragraph b"><br><br>L’inclusion dans la liste SVHC est une première étape vers des restrictions ou interdictions d’utilisation plus strictes des substances concernées. La liste SVHC est mise à jour régulièrement, avec de nouvelles substances ajoutées chaque année. Cela permet une gestion continue des risques associés aux substances chimiques dans l’UE. <br><br>SVHC sera notre quatrième base de donnée.</p><br>
+                <div class="img_dashboard2 code-container">
+                    <img src="./assets/pano4.png" alt="pano4" />
+                </div><br><br>
+                <p class="justify-align some-paragraph">
+                    <div class="num" data-number="6"><h3>Reportable Ingredients List</h3></div>
+                </p><br>
+            </div>
+        </div>
+    </section>
+    <br>
+    <section id="ch">
+        <div class="section-container">
+            <div class="about-details-container">
+                <div class="img_dashboard2 code-container">
+                    <img src="./assets/ril.png" alt="ril" />
+                </div>
+                <p class="justify-align some-paragraph b"><br>C’est une liste établie dans certains cadres réglementaires, notamment aux États-Unis et au Canada, pour garantir la <i>transparence sur les ingrédients présents dans les produits de consommation, y compris les cosmétiques</i>. Son objectif est d’<b>informer</b> à la fois les <b>consommateurs</b> et les <b>autorités</b> sur les substances potentiellement préoccupantes ou réglementées contenues dans ces produits.<br><br>Les ingrédients figurant sur cette liste incluent souvent des substances reconnues pour leurs <b>effets néfastes</b> ou ayant un statut particulier sous certaines législations, tels que :</p><br>
+            </div>
+        </div>
+    </section>
+
+    <section id="ch">
+        <div class="section-container">
+            <div class="about-details-container">
+                <ul class="c justify-align code-container">
+                    <li><b>Formaldéhyde et libérateurs de formaldéhyde</b> (présents dans certains conservateurs)</li><br>
+                    <li><b>Parabènes</b> (utilisés comme conservateurs dans les cosmétiques)</li><br>
+                    <li><b>Phtalates</b> (utilisés pour assouplir les plastiques et parfois présents dans des produits parfumés)</li><br>
+                    <li><b>Fragrances</b> (certains composés chimiques dans les parfums peuvent entraîner des allergies ou des irritations)</li><br>
+                    <li><b>Composés perfluorés (PFCs)</b> (utilisés dans certains revêtements pour les cosmétiques résistants à l'eau)</li><br>
+                    <li><b>Substances allergènes</b> (certaines fragrances ou ingrédients d'origine végétale)</li>
+                </ul>
+                <p class="justify-align some-paragraph b"><br>La Reportable Ingredients List constituera notre cinquième base de données.</p><br>
+                <div class="img_dashboard2 code-container">
+                    <img src="./assets/pano5.png" alt="pano5" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ch">
+        <div class="section-container">
+            <div class="about-details-container">
+                <p class="justify-align some-paragraph">
+                    <div class="num" data-number="7"><h3>Watch-Out Database</h3></div>
+                </p><br>
+                <div class="img_dashboard2 code-container">
+                    <img src="./assets/Watchout.png" alt="Watchout" />
+                </div>
+                <p class="justify-align some-paragraph b"><br>En approfondissant la réglementation des substances chimiques, j'ai pris conscience de l'importance des données précises, comme les numéros CAS. Bien que je puisse relier chaque ingrédient à son numéro CAS via son nom chimique, les produits cosmétiques, comme ceux de Sephora, utilisent principalement des noms INCI, ce qui complique l'analyse.<br><br>Dans mes recherches initiales en tant que consommatrice, je me suis tournée vers des sites comme INCI Beauty, qui permettent de saisir un ingrédient INCI pour obtenir des informations sur sa classification, son origine (naturelle ou synthétique) et ses risques potentiels, tels que les perturbateurs endocriniens ou les silicones.  Pour rappel, l'<b>INCI</b> (International Nomenclature of Cosmetic Ingredients), créée en 1973, standardise les noms d'ingrédients dans les cosmétiques, mais reste moins précis que le numéro CAS. Bien que le <i>système INCI simplifie les listes pour les consommateurs</i>, il peut masquer des différences chimiques importantes, créant des confusions sur les impacts potentiels sur la santé. <br><br>Par exemple, un numéro CAS associé à un INCI peut signaler un risque de perturbateur endocrinien, tandis qu'un autre pourrait ne pas en poser. En poursuivant mes recherches, j'ai découvert la <b>Watch-out Database</b> de coslaw.eu, qui fournit des informations sur les ingrédients récemment restreints ou interdits. Elle inclut des détails tels que le nom INCI, le code CAS pour identifier précisément chaque substance, ainsi que les actions requises pour les fabricants et des informations sur les substances potentiellement dangereuses, comme les perturbateurs endocriniens ou les filtres UV. <br><br>Watch-Out sera notre sixième base de donnée.</p><br>
+                <div class="img_dashboard2 code-container">
+                    <img src="./assets/pano6.png" alt="pano6" />
+                </div>
+            </div>
+        </div>
+    </section>
+    <br><br><br>
+
+    <section id="ch">
+        <div class="section-container">
+            <div class="about-details-container">
+            </div>
+        </div>
+    </section>
+    <br>
+    <br>
+    <br>
+    <section id="ch">
+        <div class="section-container">
+            <div class="about-details-container">
+                <p class="justify-align some-paragraph">
+                    <div class="num" data-number="8"><h3>Présence de métaux dans la cosmétique</h3></div>
+                </p><br>
+                <div class="img_dashboard2 code-container">
+                    <img src="./assets/poison.png" alt="poison" />
+                </div>
+                <p class="justify-align some-paragraph b"><br>En poursuivant mes recherches sur la toxicité des substances chimiques dans les cosmétiques, je me suis interrogée sur la notion de <b><i>"poison"</i></b> liée à l'utilisation quotidienne d'ingrédients potentiellement dangereux. <i>Ces substances peuvent-elles s'accumuler dans l'organisme à long terme et devenir toxiques ?</i> Cette réflexion m’a menée à explorer des cas concrets d'intoxication associés à des produits cosmétiques. <br><br>L'analyse des données recueillies montre que certains ingrédients ne doivent pas être utilisés en excès. Par exemple, des restrictions limitent leur concentration, au-delà de laquelle ils deviennent potentiellement nocifs.  J'ai trouvé un jeu de données du <b>DOHMH</b> (Department of Health and Mental Hygiene) de New York, particulièrement pertinent. Il contient les résultats de tests de laboratoire sur des produits de consommation, y compris des cosmétiques, collectés lors d'enquêtes sur des cas d'<b>intoxication au plomb</b>. Le DOHMH examine également d'autres métaux toxiques comme l'arsenic, le cadmium et le mercure. Ce dataset offre des informations cruciales sur la présence de ces métaux lourds, avec des détails sur le type de produit, son nom, le métal détecté, sa concentration, le pays d'origine et la date de collecte. <br><br>Cette base de donnée sera notre septième ressource dans ce projet.</p><br>
+            </div>
+        </div>
+    </section>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <section id="ch">
+        <div class="section-container">
+            <div class="about-details-container">
+                <div class="img_dashboard2 code-container">
+                    <img src="./assets/pano7.png" alt="pano7" />
+                </div><br><br>
+                <p class="justify-align some-paragraph">
+                    <div class="num" data-number="9"><h3>Dataset complète de produits</h3></div>
+                </p>
+                <p class="justify-align some-paragraph b"><br><b>Sephora</b></p>
+                <div class="img_dashboard2 code-container">
+                    <img src="./assets/sephora.png" alt="sephora" />
+                </div>
+            </div>
+        </div>
+    </section>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <section id="ch">
+        <div class="section-container">
+            <div class="about-details-container">
+                <p class="justify-align some-paragraph b"><br>Par chance, le jeu de données Watch-out inclut les noms INCI ainsi que les numéros CAS associés. C'est une base solide pour nos recherches, et m’aidera à analyser les produits Sephora (Huitième base de donnée).</p><br>
+            </div>
+            <p class="justify-align some-paragraph b"><b>CDPH</b></p>
+            <div class="img_dashboard2 code-container">
+                <img src="./assets/cdhp.png" alt="cdhp" />
+            </div>
+            <p class="justify-align some-paragraph b"><br>Cependant, il serait également pertinent de trouver une <b>base de données associant les produits et leurs numéros CAS</b>. J’ai donc découvert une ressource intéressante à cet égard : les données communiquées au California Safe Cosmetics Program (CSCP) du California Department of Public Health (CDPH).</p><br>
+        </div>
+    </section>
+    <section id="ch">
+        <div class="section-container">
+            <div class="about-details-container">
+                <p class="justify-align some-paragraph b"><br>L'objectif principal du CSCP est de <b>recueillir des informations sur les ingrédients dangereux ou potentiellement dangereux présents dans les produits cosmétiques</b> vendus en Californie et de les rendre accessibles au public. Selon la loi californienne, les fabricants, emballeurs, et distributeurs doivent déclarer tout produit contenant des ingrédients connus ou suspectés de provoquer des <i>cancers, des malformations congénitales, ou d’autres effets néfastes sur le développement ou la reproduction</i>. <br>Les données du CSCP comprennent plusieurs informations clés comme les <b>noms des produits cosmétiques, des fabricants et des entreprises, les marques et les catégories des produits ou encore les numéros CAS des ingrédients déclarés</b>. Il est important de noter que <i>certains produits contenant des substances cancérogènes ou toxiques peuvent ne pas être inclus si les entreprises n’ont pas fait de déclaration</i>. De plus, certains ingrédients peuvent être signalés comme des « secrets commerciaux », ce qui signifie que l’entreprise choisit de ne pas divulguer certains composants de ses produits tout en respectant les exigences de déclaration. <br><br>Malgré tout, il représente une ressource indispensable pour examiner la composition des produits cosmétiques et leur impact potentiel sur la santé publique, ce sera donc notre neuvième base de donnée.</p><br>
+                <div class="img_dashboard2 code-container">
+                    <img src="./assets/pano9.png" alt="pano9" />
+                </div>
+            </div>
+        </div>
+    </section>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <section id="ch">
+        <div class="section-container">
+            <div class="about-details-container">
+                <p class="justify-align some-paragraph"><br>
+                    <div class="num" data-number="10"><h3>Fonctions chimiques</h3></div>
+                </p>
+                <p class="justify-align some-paragraph b"><br>Dans le cadre de mon travail sur la dangerosité des ingrédients cosmétiques, j'ai également trouvé un dataset intitulé <b>Merged product weight fraction and chemical function data</b>, qui apporte un éclairage important sur la caractérisation et la prédiction des fonctions chimiques dans les produits de consommation. Ce dataset présente plusieurs <i>colonnes clés</i>, à savoir le numéro CAS, ainsi que la catégorie de produit dans laquelle la substance est utilisée. Cette classification est essentielle pour comprendre l'utilisation spécifique des ingrédients. <br><br>Ce dataset est d'une grande valeur, car il offre également la possibilité de croiser les informations avec d'autres bases de données, comme celles des substances réglementées, afin d'identifier des risques spécifiques, tels que la toxicité ou le potentiel allergène à une catégorie de produits cosmétiques. <br><br>Cette base de donnée constituera notre dixième et dernière base de donnée.</p>
+                <div class="img_dashboard2 code-container">
+                    <img src="./assets/pano10.png" alt="pano10" />
+                </div>
+            </div>
+        </section>
+
+
+        <section id="ch">
+            <div class="section-container">
+                <div class="about-details-container">
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="details-container">
+                        <p class="justify-align some-paragraph b">Après avoir exploré en profondeur les <b>recherches et le contexte de notre problématique concernant les cosmétiques et les substances chimiques</b>, nous sommes désormais prêts à entamer l'analyse de nos données.</p>
+                    </div>
+                </div>
+                <br><br><br>
+                <p class="section__text__p1">Full project on github</p>
+                <div class="contact-info-container">
+                    <img
+                    src="./assets/github.png"
+                    alt="My Github profile"
+                    class="icon"
+                    onclick="location.href='https://github.com/Cassouletti/myportfoliolea/tree/main/Projet%20sur%20les%20cosm%C3%A9tiques%20et%20substances%20chimiques'"
+                    />
+                    <p><a href="mailto:bensoussanleaai@gmail.com">Bensoussanleaai@gmail.com</a></p>
+                </div>
+                <div class="btn-container">
+                    <button class="btn btn-color-1" onclick="location.href='market.html'">
+                        Next part
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            function toggleMenu() {
+                var menu = document.querySelector('.menu-links');
+                menu.classList.toggle('active');
+            }
+        </script>
+    </body>
+    </html>

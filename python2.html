@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel Projects</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaqueries.css">
+    <link rel="stylesheet" href="./python/default.min.css">
+    <style>
+        body {
+            background-image: url(./assets/clouds2.png);
+        }
+    </style>
+</head>
+<body>
+    <nav id="desktop-nav">
+        <div class="logo">Léa Bensoussan</div>
+        <div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="research.html">Cosmetic</a></li>
+                <li><a href="excel.html">Excel</a></li>
+                <li><a href="python.html">Python</a></li>
+                <li><a href="powerbi.html">Power Bi</a></li>
+            </ul>
+        </div>
+    </nav>
+    <nav id="hamburger-nav">
+        <div class="logo">Léa Bensoussan</div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <li><a href="index.html" onclick="toggleMenu()">Home</a></li>
+                <li><a href="research.html" onclick="toggleMenu()">Cosmetic</a></li>
+                <li><a href="excel.html" onclick="toggleMenu()">Excel</a></li>
+                <li><a href="python.html" onclick="toggleMenu()">Python</a></li>
+                <li><a href="powerbi.html" onclick="toggleMenu()">Power Bi</a></li>
+            </div>
+        </div>
+    </nav>
+    <h1 class="title">2.</h1>
+    <section id="about">
+        <p class="section__text__p1">Project</p>
+        <h1 class="title">TF1</h1>
+        <div class="section-container">
+            <div class="about-details-container">
+                <div class="about-containers2">
+                    <div class="details-container">
+                        <h3>Introduction</h3>
+                        <p class="justify-align some-paragraph"><br>Dans ce projet, j'ai analysé un jeu de données sur le <b>groupe TF1</b> en utilisant Python, et des informations telles que les <i>programmes</i>, <i>l'audience</i> ainsi que les <i>revenus publicitaires</i>.
+                        </p>
+                    </div>
+                </div>
+                <p class="justify-align some-paragraph b"><br>Avant de procéder à l'analyse, un <b><i>prétraitement</i></b> minutieux des données a été effectué.</p>
+                <p class="justify-align some-paragraph b"><br>Une fois les <i>données nettoyées et préparées</i>, j'ai réalisé une <b>analyse préparatoire</b> avec plusieurs <b>visualisations</b> pour explorer les <i>relations entre les variables</i>.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="ch">
+        <h2 class="subtitle">Nettoyage et Préparation des données</h2>
+        <br>
+        <div class="section-container">
+            <div class="about-details-container">
+                <div>
+                    <p class="justify-align some-paragraph">
+                        <div class="num" data-number="1"><h3>Chargement des modules et données</h3></div>
+                    </p>
+                </div>
+                <div class="code-container">
+                    <pre class="code-block">
+                        <code>
+                            <span class="import">import</span> pandas <span class="import">as</span> pd
+                            <span class="import">import</span> numpy <span class="import">as</span> np
+                            <span class="import">import</span> matplotlib.pyplot <span class="import">as</span> plt
+                            <span class="import">import</span> seaborn <span class="import">as</span> sns
+                        </code>
+                    </pre>
+                </div>
+                <p class="justify-align some-paragraph b"><br>Je commence par importer les <i>modules appropriés</i> :<br><b>numpy</b>, utilisé pour la <i>manipulation</i> et le <i>calcul efficace</i> de tableaux et de matrices numériques.<br><b>pandas</b>, qui facilite la manipulation et l'analyse de <i>données structurées</i>.<br><b>matplotlib</b>, qui permet de créer des <i>graphiques</i> et des <i>visualisations</i> de données statiques.<br><b>Seaborn</b>, une <i>bibliothèque complémentaire</i> qui simplifie la création de graphiques.</p>
+
+                <br>
+                <br>
+
+                <br>
+                <br>
+                <p class="justify-align some-paragraph">
+                    <div class="num" data-number="2"><h3>Inspection de la donnée</h3></div>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="ch">
+        <div class="section-container">
+            <div class="about-details-container">
+                <div class="img_dashboard5 code-container">
+                    <img src="./assets/data_tf1.png" alt="data" />
+                </div>
+                <p class="justify-align some-paragraph b"><br>Pour obtenir une <b>vue d'ensemble rapide des données</b>, nous pouvons afficher un <i>résumé concis de chaque colonne</i> :</p>
+                <br>
+                <div class="img_dashboard4 code-container">
+                    <img src="./assets/datainfo2.png" alt="datainfo" />
+                </div>
+                <br>
+                <p class="justify-align some-paragraph b"><br>On constate que toutes les colonnes contiennent <b>100 lignes de données</b> sauf pour <i>l'audience, le nombre de publicités, et les revenus publicitaires</i>.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="ch">
+        <div class="section-container">
+            <div class="about-details-container">
+                <br><br><br>
+                <p class="justify-align some-paragraph">
+                    <div class="num" data-number="3"><h3>Manipulation de chaînes de caractères</h3></div>
+                </p>
+                <p class="justify-align some-paragraph b"><br>Je crée une <b>chaîne de caractères</b> qui combine le <i>nom</i> et <i>le type de chaque programme</i>, et j'affiche ensuite ces chaînes pour les 5 premiers programmes.</p>
+                <div class="code-container"><br>
+                    <pre class="code-block">
+                        <code>
+                            programmes_ = data[<span class="char">'Nom_programme'</span>] + <span class="char">' - '</span> + data[<span class="char">'Type_programme'</span>]
+                            programmes_.<span class="functions">sample</span>(<span class="import">5</span>)
+                        </code>
+                    </pre>
+                </div>
+                <br><br><br><br><br>
+                <p class="justify-align some-paragraph">
+                    <div class="num" data-number="4"><h3>Ensembles et Structures de Données</h3></div>
+                </p>
+                <div class="code-container">
+                    <pre class="code-block">
+                        <code>
+                            noms_programmes = <span class="import">list</span>(data[<span class="char">'Nom_programme'</span>])
+                            noms_programmes = <span class="import">set</span>(noms_programmes)
+                            nombre_programmes = <span class="import">len</span>(noms_programmes)
+                        </code>
+                    </pre>
+                </div>
+                <p class="justify-align some-paragraph b"><br>Il y a <b>78 <i>programmes uniques</i></b> en tout.</p>
+            </div>
+        </div>
+    </section>
+    <br>
+
+    <section id="ch">
+        <div class="section-container">
+            <div class="about-details-container">
+                <p class="justify-align some-paragraph b">Créons un <b>dictionnaire</b> où les clés sont les types de programmes <i>(Documentaire, Divertissement, Information)</i> et les valeurs sont des listes de noms de programmes de ce type.</p><br>
+                <pre class="code-block">
+                    <code>
+                        programmes = {<span class="char">'Documentaire'</span> : [], <span class="char">'Divertissement'</span>: [], <span class="char">'Information'</span>: []}
+                    </code>
+                </pre>
+                <br>
+                <pre class="code-block">
+                    <code>
+                        <span class="import">for</span> t, n <span class="import">in</span> data[[<span class="char">'Type_programme'</span>, <span class="char">'Nom_programme'</span>]].<span class="functions">values</span>:
+                        <span class="import">if</span> t == <span class="char">'Documentaire'</span>:
+                        programmes[<span class="char">'Documentaire'</span>].<span class="functions">append</span>(n)
+                        <span class="import">elif</span> t == <span class="char">'Divertissement'</span>:
+                        programmes[<span class="char">'Divertissement'</span>].<span class="functions">append</span>(n)
+                        <span class="import">else</span>:
+                        programmes[<span class="char">'Information'</span>].<span class="functions">append</span>(n)
+                    </code>
+                </pre>
+                <br><br><br><br><br>
+                <p class="justify-align some-paragraph">
+                    <div class="num" data-number="5"><h3>Structures Conditionnelles et Boucles</h3></div>
+                </p>
+                <p class="justify-align some-paragraph b">Je filtre les programmes et sélectionne ceux qui dépassent 120 minutes.</p>
+                <pre class="code-block">
+                    <code>
+                        data[data[<span class="char">'Durée'</span>] > <span class="import">120</span>][<span class="char">'Nom_programme'</span>]
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+
+    <section id="ch">
+        <div class="section-container">
+            <div class="about-details-container">
+                <div class="details-container2">
+                    <ul class="custom-list">
+                      <li><i>Jacky Show</i></li>
+                      <li><i>Petites Stars : Le Grand Soir</i></li>
+                      <li><i>Koh-Lanta</i></li>
+                      <li><i>50 minutes inside</i></li>
+                      <li><i>Orthodoxie (émission de télévision)</i></li>
+                      <li><i>Demain Président</i></li>
+                      <li><i>Enfoirés Kids</i></li>
+                      <li><i>Mon incroyable fiancé</i></li>
+                      <li><i>1, rue Sésame</i></li>
+                      <li><i>La Poupée de sucre</i></li>
+                      <li><i>L'Île de la tentation</i></li>
+                      <li><i>Carnaval (émission de télévision)</i></li>
+                      <li><i>Le Droit de savoir</i></li>
+                      <li><i>L'Ami public numéro un</i></li>
+                      <li><i>Le Monde en face (émission de télévision)</i></li>
+                      <li><i>Grands Reportages (émission de télévision)</i></li>
+                      <li><i>Ça vaut le détour</i></li>
+                      <li><i>Bonjour ! La Matinale TF1</i></li>
+                      <li><i>Miss France</i></li>
+                      <li><i>Reportages faits divers</i></li>
+                      <li><i>Drôle de jeu (émission de télévision)</i></li>
+                      <li><i>Juge Arthur</i></li>
+                      <li><i>Orthodoxie (émission de télévision)</i></li>
+                      <li><i>Bienvenue dans ma tribu</i></li>
+                      <li><i>Les Enfants de la télé</i></li>
+                      <li><i>Le Bébête Show</i></li>
+                      <li><i>Demain Président</i></li>
+                      <li><i>La Chanson secrète</i></li>
+                      <li><i>Dorothée Show</i></li>
+                      <li><i>Petits secrets entre voisins</i></li>
+                      <li><i>Face à la Une</i></li>
+                      <li><i>Ce soir avec Arthur</i></li>
+                      <li><i>Greg le millionnaire</i></li>
+                      <li><i>C'est quoi l'amour ?</i></li>
+                      <li><i>Référendum : en direct avec le Président</i></li>
+                      <li><i>Big Bounce Battle</i></li>
+                      <li><i>La Maison de TF1</i></li>
+                      <li><i>La Chanson secrète</i></li>
+                      <li><i>Les 30 Histoires les plus spectaculaires</i></li>
+                  </ul></div>
+              </div>
+          </div>
+      </section>
+
+      <br><br><br>
+
+      <section id="ch">
+        <div class="section-container">
+            <div class="about-details-container">
+
+                <p class="justify-align some-paragraph b">Je sépare les programmes en deux catégories : ceux pour enfants et ceux pour adultes..</p><br>
+                <pre class="code-block">
+                    <code>
+                        filtered_data = data[(data[<span class="char">'Cible_principale'</span>] == <span class="char">'Enfants'</span>) | (data[<span class="char">'Cible_principale'</span>] == <span class="char">'Adultes'</span>)]
+                        programmes_cibles = filtered_data.<span class="functions">groupby</span>(<span class="char">'Cible_principale'</span>, observed=<span class="import">True</span>)[<span class="char">'Nom_programme'</span>].<span class="functions">apply</span>(<span class="import">list</span>).<span class="functions">to_dict</span>()
+                    </code>
+                </pre><br>
+                <div class="img_dashboard7 code-container">
+                    <img src="./assets/adultes.png" alt="data" />
+                </div><br>
+                <div class="img_dashboard7 code-container">
+                    <img src="./assets/enfants.png" alt="data" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <br><br><br><br><br><br><br><br><br><br><br>
+
+    <section id="ch">
+        <div class="section-container">
+            <div class="about-details-container">
+                <p class="justify-align some-paragraph">
+                    <div class="num" data-number="6"><h3>Audience et Part de Marché d'un Programme</h3></div>
+                </p>
+                <pre class="code-block">
+                    <code>
+                        <span class="import">def</span> part_de_marché_programme(nom):
+                        resultats = data[data[<span class="char">'Nom_programme'</span>].<span class="functions">isin</span>([nom])]
+                        nom_programme = resultats[<span class="char">'Nom_programme'</span>].<span class="functions">values</span>[<span class="import">0</span>] 
+                        <span class="import">if len</span>(resultats) > <span class="import">1</span>:
+                        <span class="import">print</span>(f<span class="char">"Nom de programme :</span> {nom_programme}<span class="char">\nMoyenne audience :</span> 
+                        {resultats[<span class="char">'Audience'</span>].<span class="functions">mean</span>()}<span class="char">\nPart de marché moyenne :</span> {resultats[<span class="char">'Part_marché'</span>].<span class="functions">mean</span>()}<span class="char">"</span>)
+                        <span class="import">elif len</span>(resultats) == <span class="import">1</span>:
+
+                        <span class="import">print</span>(<span class="char">f"Nom de programme :</span> {nom_programme}<span class="char">\nAudience :</span> 
+                        {resultats[<span class="char">'Audience'</span>].<span class="functions">iloc</span>[<span class="import">0</span>]}<span class="char">\nPart de marché :</span> {resultats[<span class="char">'Part_marché'</span>].<span class="functions">iloc</span>[<span class="import">0</span>]}</span>") 
+                        <span class="import">else</span> :
+                        <span class="import">print</span>(<span class="char">f"Le programme</span> {nom} <span class="char">n'a pas été trouvé dans les données."</span>)
+                    </code>
+                </pre><br>
+                <p class="justify-align some-paragraph b">J'écris une <b>fonction</b> qui prend en entrée le nom d'un programme et renvoie son audience et sa part de marché.</p><br>
+                <div class="img_dashboard7 code-container">
+                    <img src="./assets/fonction_programme.png" alt="data" />
+                </div>
+            </div>
+        </div>
+    </section>
+    <br><br>
+    <section id="ch">
+        <div class="section-container">
+            <div class="about-details-container">
+                <p class="justify-align some-paragraph">
+                    <div class="num" data-number="7"><h3>Gestion des Valeurs Manquantes</h3></div>
+                </p>
+                <br>
+                <p class="justify-align some-paragraph b">Pour rappel, voici les <b>valeurs manquantes</b>.</p><br>
+                <div class="img_dashboard8 code-container">
+                    <img src="./assets/valeurs_manquantes_tf1.png" alt="data" />
+                </div><br>
+                <p class="justify-align some-paragraph b"><b>Audience</b></p><br>
+                <p class="justify-align some-paragraph b">En regardant de plus prés les valeurs manquantes, je remarque que chacune des lignes correspond à un type de programme différent. Je décide alors de <b>remplacer les valeurs manquantes</b> par la <b>moyenne de l'audience</b> en fonction du <i>type de programme</i> et de la <i>cible principale</i>. </p>
+                <pre class="code-block">
+                    <code>
+                        moyennes_audiences = data.<span class="functions">groupby</span>([<span class="char">'Cible_principale'</span>, <span class="char">'Type_programme'</span>], observed=<span class="import">True</span>)[<span class="char">'Audience'</span>].<span class="functions">transform</span>(<span class="char">'mean'</span>)
+                        data[<span class="char">'Audience'</span>] = data[<span class="char">'Audience'</span>].<span class="functions">fillna</span>(moyennes_audiences)
+                    </code>
+                </pre><br>
+                <p class="justify-align some-paragraph b"><b>Nombre Publicités</b></p><br>
+                <p class="justify-align some-paragraph b">Je souhaite remplacer les valeurs manquantes en me servant de la <b>moyenne des revenus publicitaires associés à des intervalles</b>.<br>Je vais m'occuper de 4 des 5 valeurs manquantes, car l'une d'entre elles a également une valeur manquante pour les revenus publicitaires.<br>Je regarde les valeurs uniques pour cette colonne afin de créer mes intervalles.</p>
+                <pre class="code-block">
+                    <code>
+                        data[<span class="char">'Nombre_publicités'</span>].<span class="functions">unique</span>()
+                    </code>
+                </pre><br>
+            </div>
+        </div>
+    </section>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <section id="ch">
+        <div class="section-container">
+            <div class="about-details-container">
+                <p class="justify-align some-paragraph b">Je crée mes <b>intervales</b> et j'assigne chaque valeur de 'Nombre_publicités' à un chacun d'entre eux.<br></p>
+                <pre class="code-block">
+                    <code>
+                        bins = [<span class="import">0</span>, <span class="import">5</span>, <span class="import">10</span>, <span class="import">15</span>, <span class="import">20</span>, <span class="import">25</span>, <span class="import">30</span>, <span class="import">35</span>, <span class="import">40</span>, <span class="import">45</span>, <span class="import">50</span>]
+                        labels = [<span class="char">'0-5'</span>, '<span class="char">5-10'</span>, <span class="char">'10-15'</span>, <span class="char">'15-20'</span>, <span class="char">'20-25'</span>, <span class="char">'25-30'</span>, <span class="char">'30-35'</span>, <span class="char">'35-40'</span>, <span class="char">'40-45'</span>, <span class="char">'45-50'</span>]
+
+                        Nombre_publicités_binned = pd.<span class="functions">cut</span>(data[<span class="char">'Nombre_publicités'</span>], bins=bins, labels=labels)
+                    </code>
+                </pre><br>
+                <p class="justify-align some-paragraph b">Ensuite, je calcule la <b>moyenne des revenus publicitaires pour chaque intervalle</b> et je crée un <b>dictionnaire</b> qui les mappera à la moyenne correspondante.<br></p><br>
+                <pre class="code-block">
+                    <code>
+                        mean_revenues = data.<span class="functions">groupby</span>(Nombre_publicités_binned, observed=<span class="import">True</span>)[<span class="char">'Revenus_publicitaires'</span>].<span class="functions">mean</span>()
+                        mean_revenues_dict = mean_revenues.<span class="functions">to_dict</span>()
+
+                    </code>
+                </pre><br>
+                <p class="justify-align some-paragraph b">Ensuite, je crée une <b>fonction find_closest_bin</b> que j'applique aux revenus publicitaires. Et pour finir je <b>mappe</b> les labels d'intervalle à leurs valeurs numériques, et je <b>remplace les valeurs manquantes</b>.<br></p><br>
+                <pre class="code-block">
+                    <code>
+                        nombre_publicités_intervals = data.<span class="functions">loc</span>[data[<span class="char">'Nombre_publicités'</span>].<span class="functions">isna</span>() 
+                        & data[<span class="char">'Revenus_publicitaires'</span>].<span class="functions">notna</span>(), 
+                        <span class="char">'Revenus_publicitaires'</span>].<span class="functions">apply</span>(<span class="import">lambda</span> x: find_closest_bin(x, mean_revenues_dict))
+
+                        interval_to_value = {label: (bins[i] + bins[i+<span class="import">1</span>]) // <span class="import">2 for</span> i, label <span class="import">in enumerate</span>(labels)}
+
+                        data.loc[data[<span class="char">'Nombre_publicités'</span>].<span class="functions">isna</span>() 
+                        & data[<span class="char">'Revenus_publicitaires'</span>].<span class="functions">notna</span>(), <span class="char">'Nombre_publicités'</span>] = nombre_publicités_intervals.<span class="functions">map</span>(interval_to_value)
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <section id="ch">
+        <div class="section-container">
+            <div class="about-details-container">
+                <p class="justify-align some-paragraph b"><b>Revenus publicitaires</b></p><br>
+                <p class="justify-align some-paragraph b">J'applique le même procédé en <b>sens inverse</b> : je remplace les valeurs manquantes des revenus publicitaires par la moyenne des intervalles correspondants.<br>Il reste dorénavant une ligne dont il manque la valeur du nombre de publicités et ses revenus publicitaires. Je décide de la supprimer.</p>
+                <br>
+                <br>
+                <br>
+                <br>
+                <div class="num" data-number="8"><h3>Ratio Audience Publicité</h3></div>
+                <p class="justify-align some-paragraph b">J'ajoute une colonne "Ratio_Audience_Publicité" qui est le rapport entre l'audience et les revenus publicitaires.</p>
+                <pre class="code-block">
+                    <code>
+                        data[<span class="char">'Ratio_Audience_Publicité'</span>] = <span class="import">round</span>(data[<span class="char">'Audience'</span>] / data[<span class="char">'Revenus_publicitaires'</span>],<span class="import">2</span>)
+                    </code>
+                </pre><br>
+                <p class="justify-align some-paragraph b">Nous observons par exemple que le rapport entre un score d'audience de 263 143 personnes et un revenu publicitaire de 36 860, le ratio est de 7.14.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="ch">
+        <div class="section-container">
+            <div class="about-details-container">
+                <h2 class="subtitle">Analyse et Visualisation des Données</h2><br>
+                <p class="justify-align some-paragraph">
+                    <div class="num" data-number="1"><h3>Statistiques Descriptives</h3></div>
+                </p>
+                <p class="justify-align some-paragraph b">En utilisant la fonction <b><i>describe</i></b>, nous apercevons les satistiques propres à nos données.</p>
+                <div class="img_dashboard5 code-container">
+                    <img src="./assets/data_describe_tf1.png" alt="data_describe_tf1" />
+                </div><br>
+                <p class="justify-align some-paragraph b">Par exemple, nous voyons que la <i>moyenne et la médiane</i> de l’<b>audience</b>, respectivement ~2 415 052 et ~2 273 125, sont très proches, ce qui suggère une <b>distribution relativement symétrique</b> des données.<br>En revanche, l’écart type de 1 439 615 nous montre que les données présentent une <b>grande dispersion autour de la moyenne</b>, indiquant une variation significative dans les niveaux d’audience.</p><br><br>
+                <p class="justify-align some-paragraph b">Pour des informations plus précises ou plus spécifiques, nous pouvons faire des <b>groupby</b> et observer par exemple la moyenne de l'audience par type de programme.</p>
+                <pre class="code-block">
+                    <code>
+                        <span class="import">round</span>(data.<span class="functions">groupby</span>(<span class="char">'Type_programme'</span>, observed=<span class="import">True</span>)[<span class="char">'Audience'</span>].<span class="functions">mean</span>(), <span class="import">2</span>)
+                    </code>
+                </pre><br>
+            </div>
+        </div>
+    </section>
+    <br>
+    <br>
+    <br>
+    <section id="ch">
+        <div class="section-container">
+            <div class="about-details-container">
+                <div class="img_dashboard7 code-container">
+                    <img src="./assets/moyenne_audience_prog.png" alt="moyenne_audience_prog" />
+                </div><br><br><br>
+                <p class="justify-align some-paragraph">
+                    <div class="num" data-number="2"><h3>Tableau croisé</h3></div>
+                </p><br>
+                <p class="justify-align some-paragraph b">Voici un tableau croisé qui montre la <b>moyenne de la part de marché par cible principale et type de programme</b>.</p><br>
+                <div class="img_dashboard5 code-container">
+                    <img src="./assets/moyenne_part_marché_cible_prog.png" alt="moyenne_part_marché_cible_prog" />
+                </div><br><br>
+            </div>
+        </section>
+        <section id="ch">
+            <div class="section-container">
+                <div class="about-details-container">
+                    <p class="justify-align some-paragraph">
+                        <div class="num" data-number="3"><h3>Histogramme de l'audience</h3></div>
+                    </p><br>
+                    <div class="img_dashboard5 code-container">
+                        <img src="./assets/histo_audience.png" alt="histo_audience" />
+                    </div><br>
+                    <p class="justify-align some-paragraph b">Cela peut indiquer que la plupart des programmes ont une audience qui se situe à ~1,2 million de télespectateurs.</p><br><br><br>
+                    <p class="justify-align some-paragraph">
+                        <div class="num" data-number="4"><h3>Relation entre l'Audience et les Revenus publicitaires</h3></div>
+                    </p><br>
+                </div>
+            </section>
+            <section id="ch">
+                <div class="section-container">
+                    <div class="about-details-container">
+                        <div class="img_dashboard5 code-container">
+                            <img src="./assets/audience_revenu.png" alt="audience_revenu" />
+                        </div><br>
+                        <p class="justify-align some-paragraph b">On constate qu'il n'y a <b>aucune relation</b>.</p><br><br><br>
+                        <p class="justify-align some-paragraph">
+                            <div class="num" data-number="5"><h3>Revenus publicitaires par type de programme</h3></div>
+                        </p><br>
+                        <div class="img_dashboard5 code-container">
+                            <img src="./assets/revenu_type.png" alt="revenu_type" />
+                        </div>
+                    </div>
+                </section>
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+                <section id="ch">
+                <div class="section-container">
+                    <div class="about-details-container">
+                        <p class="justify-align some-paragraph">
+                            <div class="num" data-number="6"><h3>Heatmap</h3></div>
+                        </p><br>
+                        <div class="img_dashboard5 code-container">
+                            <img src="./assets/corr_tf1.png" alt="corr_tf1" />
+                        </div><br>
+                        <p class="justify-align some-paragraph b">On remarque que les corrélations présentes sont relativement faibles, sinon presque <b>inexistantes</b>. Nous ne prenons pas en compte celles en rouge et noir car elles sont directement liées au ratio que l'on a caculé.</p>
+                    </div>
+                </section>
+                <section id="ch">
+                    <div class="section-container">
+                        <div class="about-details-container">
+                            <div class="details-container">
+                                <p class="justify-align some-paragraph b">Et voilà, <b>l'analyse</b> arrive à son terme. Nous avons exploré les données de TF1 et nous avons pu faire certains constats grâce aux statistiques. Mais nous avons surtout remarqué qu'il n'y avait aucune corrélation entre les variables présentes dans les données, probablement car les données sont fictives.</p>
+                            </div>
+                        </div>
+                        <br><br><br>
+                        <p class="section__text__p1">Full project on github</p>
+                        <div class="contact-info-container">
+                            <img
+                            src="./assets/github.png"
+                            alt="My Github profile"
+                            class="icon"
+                            onclick="location.href='https://github.com/'"
+                            />
+                            <p><a href="mailto:bensoussanleaai@gmail.com">Bensoussanleaai@gmail.com</a></p>
+                        </div>
+                        <div class="btn-container">
+                            <button class="btn btn-color-1" onclick="location.href='python.html'">
+                                Previous
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <script>
+                    function toggleMenu() {
+                        var menu = document.querySelector('.menu-links');
+                        menu.classList.toggle('active');
+                    }
+                </script>
+            </body>
+            </html>
